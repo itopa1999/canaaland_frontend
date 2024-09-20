@@ -1,0 +1,1268 @@
+{% load static %}
+{% include 'msg.html' %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DCC YOUTH POWER EXPLOSION 2024</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.jpg' %}" rel="icon">
+  <link href="{% static 'assets/img/favicon.jpg' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <style>
+    .btn1{
+      background-color:#f82249;
+      padding:15px;
+      color:white;
+      border:2px solid #f82249;
+      border-radius:5px;
+    }
+        .modal-content {
+            border-radius: 0;
+        }
+.car {
+  position: relative;
+  height: 300px; /* Set your desired fixed height */
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+
+.car-content {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  
+  
+}
+.car p {
+  font-size:13px;
+}
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+}
+    </style>
+
+</head>
+
+    <body onload="message()">
+
+      <!-- ======= Header ======= -->
+      <header id="header" class="d-flex align-items-center ">
+        <div class="container-fluid container-xxl d-flex align-items-center">
+
+          <div id="logo" class="me-auto">
+            <a href="{% url 'index' %}" class="scrollto"><img src="{% static 'assets/img/logo.png' %}" alt="" title=""></a>
+          <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+          </div>
+
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#speakers">Speakers/Quest</a></li>
+              <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+              <li><a class="nav-link scrollto" href="#venue">Venue</a></li>
+              <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</a></li>
+                  <li><a href="{% url 'hymns' %}">Hymns</a></li>
+                  <li><a href="{% url 'rules' %}">Life During Conference</a></li>
+                  <li><a href="{% url 'tenets' %}">Tenets of C.A.C</a></li>
+                  <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
+                  <li><a href="{% url 'fft' %}">Food for thought</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+          <a class="buy-tickets scrollto"  data-bs-toggle="modal" data-bs-target="#buy-ticket-modal"  href="#buy-tickets">Register</a>
+
+        </div>
+      </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0">Y.P.E<br> <span>(Youth Power Explosion)</span><br> (2024)</h1><br>
+      <p class='text-warning'> <u><i>Tagged:</u></i> <h2 class='text-warning'><strong>THY KINGDOM COME<strong> <h6 class='text-white'><b>-- MAT 6:10 --</b></h6> </h2> </p>
+      <p class="mb-4 pb-0">27th - 30th March, Canaanland DCC Headquaters, Osun state, Nigeria.</p>
+    </div>
+  </section><!-- End Hero Section -->
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>About The Program</h2>
+            <p style="font-size:20px;"><u>Featuring:</u></p>
+            <p>MARITAL TALK, DELIVERANCE, IMPARTATION, TALENT HUNT<br>
+           EMPOWERMENT, GAME, SHARE AND CARE, SALVATION <br>
+            ENTERPRENEURSHIP, and lot more.</p>
+
+          </div>
+          <div class="col-lg-3">
+            <h3>Where <i class="bi bi-geo"></i></h3>
+            <p>CANAANLAND DCC HEADQUATERS:</p>
+            <p class="h4">KLM 2, Omifunfun Road, Olode Ile-Ife, Osun State, Nigeria.</p>
+            <p class="text-warning mt-2"><i class='bi bi-lightbulb-fill' style="font-size: 40px;"></i><br> FREE BUS AT ONDO ADEYEMI CAMPUS AND ILE OAU CAMPUS</p>
+
+          </div>
+          <div class="col-lg-3">
+            <h3>When <i class="bi bi-calendar"></i></h3>
+            <p>Wednesday To Saturday<br>27th - 30th March, 2024</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Speakers Section ======= -->
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Officiating Ministers and Quests</h2>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/3.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Prophet Dr. Hezekiah Oladeji</a></h3>
+                <p>C.A.C Gen. Evang. Nigeria & Overseas</p>
+                <div class="social">
+                  <div class="text-white"> CHIEF HOST </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+              <img src="{% static 'assets/img/speakers/5.jpg' %}" alt="Speaker 1" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Pastor D.B Osunrayi</a></h3>
+                <p>CAC CANAANLAND DCC Suprintendent </p>
+                <div class="social">
+                <div class="text-white">  HOST </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/1.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Prophet Akinola Fasawe</a></h3>
+                <p>GUEST</p>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/8.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Lady/Evangelist Esther Oladeji</a></h3>
+                <p>Mummy G.O</p>
+                <div class="social">
+                  <div class="text-white"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/9.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">pastor Mayowa Ojo</a></h3>
+                <p>DCC YOUTH PASTOR</p>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/2.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Pastor Gideon</a></h3>
+                <p>English Assembly Pastor</p>
+                <div class="social">
+                  <div class="text-white">  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/4.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Shade Taiwo</a></h3>
+                <p>GUEST</p>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/6.jpg' %}" height="50" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Tope Olotokun</a></h3>
+                <p>GUEST</p>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/10.jpg' %}" height="50" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Minister Oluwatimilehin Emmanuel </a></h3>
+                <p>DCC YOUTH COORDINATOTR</p>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/8.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Pastor Paul Olalekan</a></h3>
+                <p>GUEST PASTOR</p>
+                <div class="social">
+                  <div class="text-white">  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/11.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Evangelist Busayo Emmanuel</a></h3>
+                <p>DCC YOUTH CHOIR COORDINATOR</p>
+                <div class="social">
+                  <div class="text-white">  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'assets/img/speakers/7.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="#">Bro Ogunwale Seye</a></h3>
+                <p>PROTOCOL AND DATA OFFICER</p>
+                <div class="social">
+                  <div class="text-white">  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Speakers Section -->
+
+
+    <section id="schedule" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Program Schedule</h2>
+          <p>Here is the Program schedule</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3</a>
+          </li>
+        </ul>
+
+        <h3 class="sub-heading">This Page will be Updated as soon as possible, stay refreshed!!!</h3>
+
+        <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+            
+                <div class="row schedule-item">
+              <div class="col-md-4 col-4"><time>TIME</time></div>
+              <div class="col-md-8 col-8">
+                <h4>ACTIVITIES </h4>
+              </div>
+              <div class="col-md-4 col-4 mt-2"><time>11:00am - 4:00pm</time></div>
+              <div class="col-md-8 col-8 mt-2">
+                <h4>Arrival, Registration, collection of Tags </h4>
+              </div>
+              <center><u><p class="text-danger">OPENING SESSION</p></u></center>
+
+              <div class="col-md-4 col-4 mt-3"><time>4:00pm - 4:10pm</time></div>
+              <div class="col-md-8 col-8 mt-3">
+                <h4>Opening Prayer </h4>
+              </div>
+
+              <div class="col-md-4 col-4"><time>4:20pm - 5:00pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Praise and Worship </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>5:00pm - 5:10pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Opening Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a> </h4> 
+              </div>
+              <div class="col-md-4 col-4"><time>5:10pm - 5:25pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Introduction </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>5:25pm - 5:40pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Welcome Speech </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>5:40pm - 5:50pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Life during camp </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>5:50pm - 6:10pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Conference choir welcome anthem  </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>6:10pm - 6:25pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>District presentation 1 (Olode District) </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>6:25pm - 7:25pm</time></div>
+              <div class="col-md-8 col-8">
+                <div class="speaker">
+                  <img src="{% static 'assets/img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                </div>
+                <h4>First lecture by Pastor Gideon  </h4>
+                <h5>Bible Verse : --------</h5>
+              </div>
+              <div class="col-md-4 col-4"><time>7:25pm - 8:10pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Revival Hour and Impactation Prayer </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>8:10pm - 8:40pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Guest Artist: Minister JOSH </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>8:40pm - 8:55pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Announcement </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>8:55pm - 9:00pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Benediction </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>9:00pm - 11:00pm</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Supper </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>11:00pm - 5:00am</time></div>
+              <div class="col-md-8 col-8">
+                <h4>Light out and bed rest </h4>
+              </div>
+              <div class="col-md-4 col-4"><time>Note: </time></div>
+              <div class="col-md-8 col-8">
+                <h4> </h4>
+                <p class="text-danger">NO GROUP PRAYER</p>
+              </div>
+            </div>
+          </div>
+         
+
+          <!-- Schdule Day 2 -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+            <div class="row schedule-item">
+            <div class="col-md-4 col-4"><time>TIME</time></div>
+            <div class="col-md-8 col-8">
+              <h4>ACTIVITIES </h4>
+            </div>
+            <div class="col-md-4 col-4 mt-2"><time>5:30am - 7:00am</time></div>
+            <div class="col-md-8 col-8 mt-2">
+              <h4>Early Morning Session </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>5:30am - 5:40am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Opening Prayer </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>5:40am - 6:00am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Praise and Worship </h4>
+            </div>
+             <center><u><p class="text-danger">Daily Morning Devotion</p></u></center>
+            <div class="col-md-4 col-4 mt-3"><time>6:00am - 6:45am</time></div>
+              <div class="col-md-8 col-8 mt-3">
+              <h4>Morning Lecture from living water </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>6:45am - 6:55am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Prayer </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>6:55am - 7:00am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Announcement </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>7:00am - 9:00am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Personal Hygiene </h4>
+            </div>
+            <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
+            <div class="col-md-8 col-8">
+              <h4 class="text-danger">Division of District for general cleaning, there shall be inspection to our rooms </h4>
+            </div>
+            <center><u><p class="text-danger">Morning Session</p></u></center>
+            <div class="col-md-4 col-4 mt-3"><time>9:00am - 9:10am</time></div>
+              <div class="col-md-8 col-8 mt-3">
+              <h4>Opening Prayer </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>9:10am - 9:30am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Praise and Worship </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>9:30am - 9:40am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+            </div>
+            <div class="col-md-4 col-4"><time>9:40am - 10:20am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Share and Care </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>10:20am - 11:20am</time></div>
+            <div class="col-md-8 col-8">
+              <div class="speaker">
+                <img src="{% static 'assets/img/speakers/5.jpg' %}" alt="Hubert Hirthe">
+              </div>
+              <h4>Lecture 2 by DCC Chairman </h4>
+              <h5>Pastor D.B Osunrayi</h5>
+            </div>
+            <div class="col-md-4 col-4"><time>11:20am - 11:50am</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Prayer (Impactation) </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>11:50am - 12:05pm</time></div>
+            <div class="col-md-8 col-8">
+              <h4>District Presentation 2 (Maya Lagos) </h4>
+            </div>
+            <div class="col-md-4 col-4"><time>12:05pm - 12:55pm</time></div>
+            <div class="col-md-8 col-8">
+              <div class="speaker">
+                <img src="{% static 'assets/img/speakers/6.jpg' %}" alt="Hubert Hirthe">
+              </div>
+              <h4>Ministration by Gospel Artist: </h4>
+              <h5>Tope Olotokun</h5>
+            </div>
+            <div class="col-md-4 col-4"><time>12:55pm - 1:00pm</time></div>
+            <div class="col-md-8 col-8">
+              <h4>Announcement and Benediction </h4>
+            </div>
+            <div class="col-md-4 col-4"><time class="text-danger">1:00pm - 3:00pm</time></div>
+            <div class="col-md-8 col-8">
+              <h4 class="text-danger">BREAK </h4>
+            </div>
+            <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
+            <div class="col-md-8 col-8">
+              <h4 class="text-danger">GAMES (Indoor & Outdoor) and Medical Check up e.t.c </h4>
+            </div>
+            <center><u><p class="text-danger">Afternoon session</p></u></center>
+            <div class="col-md-4 col-4 mt-3"><time>3:30pm - 3:50pm</time></div>
+              <div class="col-md-8 col-8 mt-3">
+              <h4>Praise and Worship </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>3:50pm - 4:00pm</time></div>
+            <div class="col-md-8 col-8">
+            <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a> </h4>
+          </div>
+          <div class="col-md-4 col-4 "><time>4:00pm - 4:15pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>District Presentation 3 (igbando District) </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>4:15pm - 5:20pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>ENTERPRENEURSHIP LECTURE </h4>
+              <h5>Empowerment HOST: Mr. Pelumi</h5>
+            </div>
+            <div class="col-md-4 col-4 "><time>5:20pm - 7:50pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Lecture 3 </h4>
+              <h5>Ministration by invited minister</h5>
+            </div>
+            <div class="col-md-4 col-4 "><time>7:50pm - 8:00pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Announcement and Benediction </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time class="text-danger">8:00pm - 9:00pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4 class="text=danger">BREAK </h4>
+            </div>
+            <center><u><p class="text-danger">Evening session</p></u></center>
+            <div class="col-md-4 col-4 mt-3"><time>9:00pm - 9:10pm</time></div>
+              <div class="col-md-8 col-8 mt-3">
+              <h4>Opening Prayer </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>9:10pm - 9:30pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Praise and Worship </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>9:30pm - 10:00pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>District Presentation 4 (Akobo and Akure1) </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>10:00pm - 11:00pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Talent Hurt </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>11:00pm - 11:30pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Revival and Impactation Hour </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time>11:30pm - 12:30pm</time></div>
+              <div class="col-md-8 col-8">
+                <div class="speaker">
+                  <img src="{% static 'assets/img/speakers/6.jpg' %}" alt="Hubert Hirthe">
+                </div>
+              <h4>Ministration by invited minister </h4>
+              <h5>Evangelist Olotokun</h5>
+            </div>
+            <div class="col-md-4 col-4 "><time>12:30pm - 12:40pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4>Announcement and Benediction </h4>
+            </div>
+            <div class="col-md-4 col-4 "><time class="text-danger">12:40pm - 5:30pm</time></div>
+              <div class="col-md-8 col-8">
+              <h4 class="text-danger">BREAK </h4>
+            </div>
+
+          </div>
+          </div>
+
+     
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+            
+                <div class="row schedule-item">
+                  <div class="col-md-4 col-4"><time>TIME</time></div>
+                  <div class="col-md-8 col-8">
+                    <h4>ACTIVITIES </h4>
+                  </div>
+                  <center><u><p class="text-danger">Early Morning Afternoon Session</p></u></center>
+                <div class="col-md-4 col-4 mt-3"><time>5:30am - 5:40am</time></div>
+                  <div class="col-md-8 col-8 mt-3">
+                  <h4>Opening Prayer </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>5:40am - 6:00am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Praise and Worship </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>6:00am - 6:445am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>morning Lecture from CAC devotion Book </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>6:45am - 6:55am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Prayer </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>6:55am - 7:00am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Announcement </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>7:00am - 9:00am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Personal Hygiene </h4>
+                </div>
+                <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
+                <div class="col-md-8 col-8">
+                  <h4 class="text-danger">Division of District for general cleaning, there shall be inspection to our rooms </h4>
+                  <p class="text-danger">IT'S VERY IMPORTANT YOU OBEY AND RESPECT ALL CONFERENCE OFFICER WHEN THEY GET TO YOUR ROOM. <br>
+                  Thank you</p>
+                </div>
+                
+                <div class="col-md-4 col-4 "><time>9:00am - 9:20am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Praise and Worship </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>9:20am - 9:30am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>9:30am - 10:00am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>District presentation 5 (Oreofe / Ado District) </h4>
+                </div>
+
+                <div class="col-md-4 col-4 "><time>10:00am - 11:30am</time></div>
+                <div class="col-md-8 col-8">
+                <h4>Lecture on Marriage </h4>
+              </div>
+              <div class="col-md-4 col-4 "><time>11:30am - 12:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Question and Answer </h4>
+                </div>
+
+                <div class="col-md-4 col-4 "><time>12:00pm - 12:40pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Prayer (inpactation and revival hour) </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>12:40pm - 12:50pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Offering </h4>
+                </div>
+                <div class="col-md-4 col-4 "><time>12:50pm - 1:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4> Announcement</h4>
+                </div>
+                <div class="col-md-4 col-4 "><time class="text-center">1:00pm - 3:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4 class="text-danger">REST AND GAME </h4>
+          </div>
+          <center><u><p class="text-danger">Afternoon Session</p></u></center>
+                <div class="col-md-4 col-4 mt-3"><time>3:30pm - 3:20pm</time></div>
+                  <div class="col-md-8 col-8 mt-3">
+                  <h4>Praise and Worship </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>3:20pm - 3:30pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Congregational Hymn  <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                </div>
+                <div class="col-md-4 col-4"><time>3:30pm - 4:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>District Presentation (Ore and Akure Lafe District) </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:00pm - 5:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Sister and Brother Forum </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>5:00pm - 5:30pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Question and Answer </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>5:30pm - 6:10pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Ministration Quest Artist: </h4>
+                  <h5>Tolu Praise</h5>
+                </div>
+                <div class="col-md-4 col-4"><time>6:10pm - 7:00pm</time></div>
+                  <div class="col-md-8 col-8">
+                    <div class="speaker">
+                      <img src="{% static 'assets/img/8.jpg' %}" alt="Hubert Hirthe">
+                    </div>
+                    <h4>Impactation hour(peniel Experience)</h4>
+                  <h4>Pastor Olalekan</h4>
+                </div>
+                <div class="col-md-4 col-4"><time>7:00pm - 7:20pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Worshp Session </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>7:20pm - 7:30pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Announcement and Benediction </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>7:30pm - 11:30pm</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4 class="text-danger">BREAK </h4>
+                </div>
+                <center><u><p class="text-danger">Vigil (Night) Session</p></u></center>
+                <div class="col-md-4 col-4 mt-3"><time>11:30pm - 11:40pm</time></div>
+                  <div class="col-md-8 col-8 mt-3">
+                  <h4>Prayer </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>11:40pm - 12:10am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Praise and Worship </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>12:10am - 12:25am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Conference Choir </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>12:25am - 12:50am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>District Presentation (Abuja District) </h4>
+                </div>
+
+                <div class="col-md-4 col-4"><time>12:50am - 1:20am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Final charge </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>1:20am - 2:20am</time></div>
+                  <div class="col-md-8 col-8">
+                    <div class="speaker">
+                      <img src="{% static 'assets/img/speakers/4.jpg' %}" alt="Hubert Hirthe">
+                    </div>
+                  <h4>Ministration Gospel Artist: </h4>
+                  <h5>Lady Shade Taiwo </h5>
+                </div>
+                <div class="col-md-4 col-4"><time>2:20am - 3:50am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Fatherly Blessing </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>3:50am - 4:05am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Conference Choir </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:05am - 4:20am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Offering </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:20am - 4:30am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Closing Remark </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:30am - 4:40am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Announcement </h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:40am - 4:50am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Closing Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                </div>
+                <div class="col-md-4 col-4"><time>4:50am - 5:00am</time></div>
+                  <div class="col-md-8 col-8">
+                  <h4>Prayer and Benediction </h4>
+                </div>
+                
+
+          </div>
+          
+
+         
+
+      </div>
+
+    </section><!-- End Schedule Section -->
+    <br>
+
+
+    <section id="booking" class="menu">
+      <div class="container-fluid">
+        <div class="row">
+     
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="card car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+                <div class="overlay1"></div>
+                <div class="card-content car-content">
+                  <h3 class="card-title text-warning" style="font-weight: 900;">LIFE IN CONFERENCE</h3>
+                  <div class="carousel-container">
+                    <div class="carousel-content">
+                  <p class="card-text animate__animated animate__fadeInDown">
+                  Dear Participant, before you embark on the enriching journey at the Conference. <br>
+                  click on the link below to take a moment to review the rules, guidelines and regulations, let make this conference a memorable one.
+                  Your cooperation is appreciated.
+                  </p>
+                    <div>
+                      <a href="{% url 'rules' %}" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
+                    </div>
+                  
+                    </div>
+              </div>
+            </div>
+          </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="card car car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+                <div class="overlay1"></div>
+                <div class="card-content car-content">
+                  <h3 class="card-title text-warning" style="font-weight: 900;">HYMNS</h3>
+                  <div class="carousel-container">
+                    <div class="carousel-content">
+                  <p class="card-text animate__animated animate__fadeInDown">
+                    Experience the spiritual journey through the soothing verses of this hymns. <br>Click on the link below to immerse yourself in the timeless beauty of it messages.
+                  </p>
+                     <div>
+                      <a href="{% url 'hymns' %}" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
+                    </div>
+                 
+                    </div>
+              </div>
+            </div>
+          </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="card car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+                <div class="overlay1"></div>
+                <div class="card-content car-content">
+                  <h3 class="card-title text-warning" style="font-weight: 900;">ATTENDANCE</h3>
+                  <div class="carousel-container">
+                    <div class="carousel-content">
+                  <p class="card-text card-text animate__animated animate__fadeInDown">
+                    Dear Participant, Please be reminded that the attandance is compulsory for all. <br>
+                    click on the link below to take your attendance.
+                    
+                  </p>
+                      <div>
+                        <a href="#" class="btn-book btn btn-danger" data-bs-toggle="modal" data-bs-target="#attendance">Click Here</a>
+                      </div>
+                    </p>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+      </div>
+      </section>
+    
+    
+    
+
+
+
+
+
+    <!-- ======= Venue Section ======= -->
+    <section id="venue">
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Program Venue</h2>
+        </div>
+
+        <div class="row g-0">
+          <div class="col-lg-6 venue-map">
+            <iframe src="{% static 'assets/img/4.jpg' %}" frameborder="0" style="border:0"></iframe>
+          </div>
+
+          <div class="col-lg-6 venue-info">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-8 position-relative">
+                <h3>CANAANLAND DCC HEADQUATERS:</h3>
+                <p>KLM 2, Omifunfun Road, Olode Ile-Ife, Osun State, Nigeria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+        </div>
+      </div>
+
+    </section><!-- End Venue Section -->
+
+
+
+
+    <!-- ======= Subscribe Section ======= -->
+    <section id="subscribe">
+      <div class="container " data-aos="zoom-in">
+        <div class="section-header ">
+        <center><h2>Registration Form</h2></center>
+        </div>
+        <center>
+<p>
+Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss it.
+</p>
+   
+                <button type="submit" data-bs-toggle="modal" data-bs-target="#buy-ticket-modal"  class="p-4" ><strong>REGISTER NOW !!!</strong> </button>
+                <button type="submit" data-bs-toggle="modal" data-bs-target="#attendance"  class="p-4" ><strong>ATTENDANCE NOW !!!</strong> </button>
+              </center>
+            </div>
+          </div>
+
+      </div>
+    </section><!-- End Subscribe Section -->
+
+
+
+      <!-- Modal Order Form -->
+      <div id="buy-ticket-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><strong>REGISTRATION FORM</strong></h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="{% url 'register_form' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                  {% render_field form.name|attr:'required:true' class=" " placeholder="Name" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.email class=" " placeholder="Email" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.phone|attr:'required:true' class=" " placeholder="Phone Number" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.gender|attr:'required:true' class=" " %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.assembly class=" " placeholder="Assembly" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.district class=" " placeholder="District" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.denomination class=" " placeholder="Denomination" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.country|attr:'required:true' class=" " placeholder="Country" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.state|attr:'required:true' class=" " placeholder="State" %}
+                </div>
+                <div class="form-group mt-3">
+                  {% render_field form.departmentID class=" "  %}
+
+                </div>
+                <div class="text-right mt-3">
+                  <button type="submit"  class="btn btn-success">Register</button>
+                  <button type="button"  class="btn1" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div id="attendance" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><strong>ATTENDANCE FORM (verification)</strong></h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="{% url 'attendance' %}">
+                {% csrf_token %}
+                <div class="mb-3 mt-3">
+                  <select class="select" name='day' required>
+                    <option value="">---- Choose Day ----</option>
+                    <option value="day1">Day 1</option>
+                    <option value="day2">Day 2</option>
+                    <option value="day3">Day 3</option>
+                    <option value="day4">Day 4</option>
+                  </select>
+                <div class="form-group">
+                  <input type="text" name="member" class="" id="name" placeholder="Enter Email / Phone No for verification." required>
+                </div>
+                <div class="text-right mt-3">
+                  <button type="submit"  class="btn1">Submit Attendance</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+
+    </section><!-- End Buy Ticket Section -->
+
+    <section id="hotels" class="section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>CANNANLAND DCC YOUTH EXCOS</h2>
+          <p>List of Program excos</p>
+        </div>
+        <div class="row">
+          
+        <div class="col-lg-4 card border-0 shadow p-2 rounded-0">
+          <center>
+          <li >Pastor Mayowa Ojo <br> (Youth Pastor)</li>
+          <li class="mt-2">Bro. Fatimilęyin Emmanue <br>(DCC Youth Coordinator) <br> # Olode District</li>
+          <li class="mt-2">Bro. Joshua <br>(Ass. DCC Youth Coordinator) <br> # Abuja District <br>0816 111 3420</li>
+          <li class="mt-2">Bro. Taiwo Oyeleke<br>(Gen. Sec) <br> # Ifę District</li>
+          <li class="mt-2">Evang. Adeniyi Christopher<br>(Ass. Gen. Sec.) <br> # Igando District <br> 0803 233 3860</li>
+        </center>
+        </div>
+        <div class="col-lg-4 card border-0 shadow p-2 rounded-0">
+          <center>
+            <li >Sis. Omiyale Oluwatomilola <br> (Sister's Coordinator) <br># Ore District # <br>0701 844 2850</li>
+            <li class="mt-2">Sis. Atilade Janet <br>(Ass. Sis. Coordinator) <br> # Olode District <br>0810 929 1451</li>
+            <li class="mt-2">Mrs. Orenuga <br>(Bible study Coordinator) <br> # Akobo District <br>0806 744 2050</li>
+            <li class="mt-2">Bro. Ademola Oladejo<br>(Treasurer) <br> # Maya District <br>0806 709 6105</li>
+            <li class="mt-2">Bro. Seun<br>(fin. sec) <br> # Ado District <br> 0706 419 7100</li>
+          </center>
+        </div>
+        <div class="col-lg-4 card border-0 shadow p-2 rounded-0">
+          <center>
+            <li >Bro. Akinmurede Oluwabusayo <br> (Choir Director) <br># Olode District # <br>0815 487 2595</li>
+            <li class="mt-2">Sis. Atilade Janet <br>(Prayer Coordinator) <br> # Akurę-lafę District <br>0806 849 2889</li>
+            <li class="mt-2">Mrs. Orenuga <br>(Welfare Coordinator) <br> # Akure 1 District <br>0816 488 7073</li>
+            <li class="mt-2">Bro. Ademola Oladejo<br>(Ushering coordinator) <br> # Akobo  District <br>0813 308 0459</li>
+            <li class="mt-2">Bro. Seun<br>(Drama Coordinator) <br> # Lafę-Akurę District #</li>
+          </center>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="hotels" class="section-with-bg">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>ACTIVITIES</h2>
+          <p>Some of last year activities Album</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{% static 'assets/img/act1.jpg' %}" alt="Hotel 1" class="img-fluid">
+              </div>
+              <h3><a href="#">PICTURE 1</a></h3>
+              <p> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{% static 'assets/img/act2.jpg' %}" alt="Hotel 2" class="img-fluid">
+              </div>
+              <h3><a href="#">ALL COMPETITORS</a></h3>
+              <p>Mixture of the competitors.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{% static 'assets/img/act2.jpg' %}" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#"></a></h3>
+              
+              <p></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>You can contact us through the following Medium</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>CANAANLAND DCC HEADQUATERS:
+                <p>KLM 2, Omifunfun Road, Olode Ile-Ife, Osun State, Nigeria.</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Numbers</h3>
+              <p><a href="tel:+2348034311378">+2348034311378</a></p>
+              <p><a href="tel:+2348032816426">+2348032816426</a></p>
+              <p><a href="tel:+2348065692668">+2348065692668</a></p>
+              <p><a href="tel:+2348104877264">+2348104877264</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:caccanaanlanddccyouth@gmail.com">caccanaanlanddccyouth@gmail.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+            <form action="{% url 'question' %}" method="POST" role="form" class="php-email-form">
+            {% csrf_token %}
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input type="email" class="" name="email" id="email" placeholder="Your Email">
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="" name="question" rows="5" placeholder="Question" required></textarea>
+            </div>
+
+            <div class="text-center mt-3"><button type="submit" class="btn1">Send Question</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+  </main>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 footer-info">
+            <img src="{% static 'assets/img/logo.png' %}" alt="TheEvenet">
+            <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+            <br>
+            <p style="font-size:20px;"><u>Featuring:</u></p><br>
+            <p><i class="bi bi-dot"></i> MARITAL TALK <br><i class="bi bi-dot"></i> DELIVERANCE IMPARTATION <br>
+              <i class="bi bi-dot"></i> TALENT HUNT<br> <i class="bi bi-dot"></i> EMPOWERMENT <br><i class="bi bi-dot"></i> GAME SHARE AND CARE <br>
+              <i class="bi bi-dot"></i> SALVATION<br><i class="bi bi-dot"></i> MARRIAGE SEMINAR<br><i class="bi bi-dot"></i> CAREER TALK<br>
+              <i class="bi bi-dot"></i> HEALTH TALK<br> <i class="bi bi-dot"></i>ENTERPRENEURSHIP TALK.</p>
+            
+            </div>
+
+
+          <div class="col-lg-4 col-md-4 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              CANAANLAND DCC HEADQUATERS: <br>
+              KLM 2, Omifunfun Road, Olode Ile-Ife<br>
+               Osun State, Nigeria.<br>
+              <strong>Phone:<br></strong> +2348034311378<br>
+              +2348032816426<br>
+              +2348065692668<br>
+              +2348104877264<br>
+              <strong>Email:</strong>caccanaanlanddccyouth@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-4 footer-contact">
+            <h4>Sponsors Us</h4>
+            <b><i>To support the program financially</i></b>
+            <p>
+              ACCOUNT NAME: CAC Cannaland Youth Convention <br>
+              BAMK NAME: Zenith Bank <br>
+              ACCOUNT NUMBER: <span class="" style="font-size: 18px; font-weight: 600;">1014577243</span> <br>
+            </p>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+ <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ <div class="modal fade" id="verticalycentered" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-image: linear-gradient(to right,#2f3344, rgba(255,0,0,1));color:white ">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5><strong style="font-size: 30px; font-weight: 700; color: white;">FREE SHUTTLE <i class="bi bi-truck text-danger"></i></strong></h5>
+        
+          THERE WILL BE FREE BUS AT ONDO ADEYEMI CAMPUS AND ILE OAU CAMPUS
+        </p>
+        <h5><strong style="font-size: 30px; font-weight: 700;color: white;">SPONSOR AND SUPPORT <i class="bi bi-credit-card-fill text-danger"></i></strong></h5>
+        <p>
+          <b><i>To support the program financially</i></b><br>
+              ACCOUNT NAME: CAC Cannaland Youth Convention <br>
+              BAMK NAME: Zenith Bank <br>
+              ACCOUNT NUMBER: <span class="" style="font-size: 18px; font-weight: 600;">1014577243</span> <br>
+         
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  <!-- Vendor js' %} Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static '/assets/js/sweetalert2.all.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script>
+    // Display the modal on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+          var myModal = new bootstrap.Modal(document.getElementById('verticalycentered'));
+          myModal.show();
+      }, 5000);
+    });
+</script>
+
+{% include 'msg.html' %}
+</body>
+
+</html>

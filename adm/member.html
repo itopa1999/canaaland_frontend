@@ -1,0 +1,224 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+a:hover{
+    color:black;
+}
+#myInput,select{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+#btn1{
+  background-color:#f82249;
+  padding:15px;
+  color:white;
+  border:2px solid #f82249;
+  border-radius:5px;
+}
+</style>
+<div class="pagetitle container">
+  <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+  <nav>
+    <ol class="breadcrumb">
+      {% if user.groups.all.0.name == 'admin' %}
+      <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+      {% endif %}
+      {% if user.groups.all.0.name == 'secretary' %}
+      <li class="breadcrumb-item"><a href="{% url 'secretary-dashboard' %}">Dashboard</a></li>
+      {% endif %}
+      <li class="breadcrumb-item">Program Member Report</li>
+      <li class="breadcrumb-item"></li>
+    </ol>
+  </nav>
+</div>
+<div class="container-fluid col-lg-12" data-aos="fade-up">
+      <center>
+        <section id="counts" class="counts">
+          <div class="container">
+              <div class="col-lg-6 col-6">
+                <div class="count-box">
+                    <i class="bi bi-person-lines-fill"></i><br>
+                  <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{ count }}</span>
+                  <p><b>Total Registered Member</b></p>
+                </div>
+              </div>
+      
+            </div>
+        </section>
+      </center>
+        
+          <center>
+            <div class="container-fluid">
+                  <a href="{% url 'all-results-download' %}"><button type="button" class="btn btn-success m-2"><i class="bi bi-download"></i>. Download all Registrations Members</button></a>
+                  <button data-bs-toggle="modal" data-bs-target="#filterResult" type="button" class="m-2 btn btn-primary"><i class="bi bi-filter"></i>. Filters</button>
+              </div>
+      </center>
+
+      <section>
+        <div class="container-fluid">
+          {% if mem %}
+          <div class="table-responsive-sm">
+            <table class="table" id="myTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email Address</th>
+                  <th>Phone Number</th>
+                  <th>Gender</th>
+                  <th>Assembly</th>
+                  <th>District</th>
+                  <th>Denomination</th>
+                  <th>Country</th>
+                  <th>State</th>
+                  <th>Department</th>
+                  <th>Date and Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in mem %}
+                <tr>
+                  
+                  <ol><td><li></li></td></ol>
+                  <td>{{i.name}}</td>
+                  <td>{{i.email}}</td>
+                  <td>{{i.phone}}</td>
+                  <td>{{i.gender}}</td>
+                  <td>{{i.assembly}}</td>
+                  <td>{{i.district}}</td>
+                  <td>{{i.denomination}}</td>
+                  <td>{{i.country}}</td>
+                  <td>{{i.state}}</td>
+                  <td>{{i.department}}</td>
+                  <td>{{i.date}}</td>
+
+                </tr>{% endfor %}
+              </tbody>
+            </table>
+
+
+            {% if mem.has_other_pages %}
+    <ul class="pagination">
+        {% if mem.has_previous %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page=1">1</a></li>
+            {% if mem.number > 3 %}
+                <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            {% for i in mem.paginator.page_range %}
+                {% if mem.number|add:-3 <= i <= mem.number|add:3 %}
+                    <li class="page-item m-2 {% if i == mem.number %}active{% endif %}">
+                        <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if mem.paginator.num_pages > mem.number|add:3 %}
+                <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ mem.paginator.num_pages }}">{{ mem.paginator.num_pages }}</a></li>
+        {% else %}
+            <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">previous</span></li>
+            {% for i in mem.paginator.page_range %}
+                <li class="page-item m-2 {% if i == mem.number %}active{% endif %}">
+                    <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endfor %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ mem.paginator.num_pages }}">{{ mem.paginator.num_pages }}</a></li>
+        {% endif %}
+        {% if mem.has_next %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ mem.next_page_number }}">next</a></li>
+        {% else %}
+            <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">next</span></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+        
+            {% else %}
+
+        <center><h1 class="mt-4 text-danger"><b>No Registered Member Found</b></h1></center>
+
+        {% endif %}
+      </div>
+      </div>
+    </section>
+      </div>
+
+
+      
+<div class="modal fade" id="filterResult" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Filter Registered Members</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="get" action="#" id="myForm">
+          <div class="mb-3 mt-3">
+            <input name ='name' type="text" class="" placeholder=" Filter by Name" >
+          </div>
+
+          <div class="mb-3 mt-3">
+            <input name ='email' type="text" class="" placeholder="Filter by Email" >
+          </div>
+          <select class="select mt-3" name='gender'>
+            <option value="">---- Choose Gender ----</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+          <div class="mb-3 mt-3">
+            <input name ='district' type="text" class="" placeholder="Filter by District" >
+          </div>
+          <div class="mb-3 mt-3">
+            <input name ='state' type="text" class="" placeholder="Filter by State" >
+          </div>
+            <div class="mb-3 mt-3">
+              <label for="">Filter by Date From</label>
+              <input name ='date__gte' type="date" class="" placeholder="Filter by Date From" >
+            </div>
+
+            <div class="mb-3 mt-3">
+              <label for="">Filter by Date to</label>
+              <input name ='date__lte' type="date" class="" placeholder="Filter by Date From" >
+            </div>
+
+          <div class="mb-3 mt-3">
+            <select class="select" name='department'>
+              <option value="">Choose Department</option>
+              {% for i in department %}
+              <option value="{{i.name}}">{{i.name}}</option>
+              {% endfor %}
+            </select>
+
+            
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="submitForm('{% url 'filter-results-download' %}')" >Filter & Download</button>
+        <button type="button" class="btn btn-success" onclick="submitForm('{% url 'admin-member' %}')">Filter</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function submitForm(url){
+      document.getElementById('myForm').action =url;
+      document.getElementById('myForm').submit();
+  }
+</script>
+{% endblock content %}

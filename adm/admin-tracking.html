@@ -1,0 +1,109 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+
+</style>
+<div class="pagetitle container">
+  <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item">All Activities (Tracking)</li>
+      <li class="breadcrumb-item"></li>
+    </ol>
+  </nav>
+</div>
+<div class="container col-lg-12" data-aos="fade-up">
+
+    <div class="activity dashboard">
+        <div class="container">
+            <button data-bs-toggle="modal" data-bs-target="#filterTracking" type="button" class="btn btn-success m-2"><i class="bi bi-filter"></i>. Filter Tracking</button>
+            </div>
+        <b><span>Activities done on this system :</span><hr></b>
+        {% if track %}
+        {% for i in track %}
+        <span class="dashboard">
+        <div class="activity-item p-3 d-flex">
+          <div class="activite-label col-5 col-sm-3 col-lg-3"><strong class='text-secondary'><i class="bi bi-dot"></i>{{i.user}}</strong><br>{{i.date|timesince}} Ago</div>
+          <i class='bi bi-circle-fill activity-badge text-{{i.color}} align-self-start'></i>
+          <div class="activity-content" style="margin-left: 8px;">
+            {{i.action}}
+          </div>
+        </div>
+      </span><hr>
+        {% endfor %}
+        {% if track.has_other_pages %}
+    <ul class="pagination">
+        {% if track.has_previous %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page=1">1</a></li>
+            {% if track.number > 3 %}
+                <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            {% for i in track.paginator.page_range %}
+                {% if track.number|add:-3 <= i <= track.number|add:3 %}
+                    <li class="page-item m-2 {% if i == track.number %}active{% endif %}">
+                        <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if track.paginator.num_pages > track.number|add:3 %}
+                <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ track.paginator.num_pages }}">{{ track.paginator.num_pages }}</a></li>
+        {% else %}
+            <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">previous</span></li>
+            {% for i in track.paginator.page_range %}
+                <li class="page-item m-2 {% if i == track.number %}active{% endif %}">
+                    <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endfor %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ track.paginator.num_pages }}">{{ track.paginator.num_pages }}</a></li>
+        {% endif %}
+        {% if track.has_next %}
+            <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ track.next_page_number }}">next</a></li>
+        {% else %}
+            <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">next</span></li>
+        {% endif %}
+    </ul>
+{% endif %}
+        {% else %}
+          <center ><h1 class="text-danger mt-4 text-weight-bold">Tracking Record not found</h1> </center>
+        {% endif %}     
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="filterTracking" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Filter {{district}} transaction</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="get" action="#" id="myForm">
+            <div class="mb-3 mt-3">
+                <label for="">Filter by District Admin Name</label>
+                <input name ='user' type="text" class="" placeholder="Filter by District Admin Name" >
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="">Filter by Date From</label>
+                <input name ='date__gte' type="date" class="" placeholder="Filter by Date From" >
+              </div>
+  
+              <div class="mb-3 mt-3">
+                <label for="">Filter by Date to</label>
+                <input name ='date__lte' type="date" class="" placeholder="Filter by Date From" >
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success" >Filter</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,165 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+
+</style>
+<div class="pagetitle container">
+  <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+  <nav>
+    <ol class="breadcrumb">
+        {% if user.groups.all.0.name == 'secretary' %}
+        <li class="breadcrumb-item"><a href="{% url 'secretary-dashboard' %}">Dashboard</a></li>
+        {% endif %}
+        {% if user.groups.all.0.name == 'admin' %}
+        <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'admin-district' %}">All Districts</a></li>
+        <li class="breadcrumb-item">{{district}}</li>
+        {% endif %}
+      <li class="breadcrumb-item">{{district}} Attendance</li>
+      <li class="breadcrumb-item"></li>
+    </ol>
+  </nav>
+</div>
+<div class="container col-lg-12" data-aos="fade-up">
+    <div class="container-fluid">
+        <a href="{% url 'district-attendance-download' district.id %}"><button type="button" class="btn btn-success m-2"><i class="bi bi-download"></i>. Download all {{district}} transactions</button></a>
+        <button data-bs-toggle="modal" data-bs-target="#filterTransaction" type="button" class="m-2 btn btn-primary"><i class="bi bi-filter"></i>. Filters</button>
+        {% if user.groups.all.0.name == 'secretary' %}
+        <button data-bs-toggle="modal" data-bs-target="#AddAttendance" type="button" class="m-2 btn btn-secondary"><i class="bi bi-filter"></i>. Take Attendance</button>
+        {% endif %}
+      </div>
+
+  </center>
+<section>
+    <div class="container-fluid mt-5">
+      {% if district_attendance %}
+      <div class="table-responsive-sm">
+        <table class="table" id="myTable">
+          <thead>
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Children Boy</th>
+                <th>Children Girl</th>
+                <th>Men</th>
+                <th>Women</th>
+                <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in district_attendance %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.date}}</td>
+                <td>{{i.children_boy}}</td>
+                <td>{{i.children_girl}}</td>
+                <td>{{i.men}}</td>
+                <td>{{i.women}}</td>
+                <td>{{i.children_boy|add:i.children_girl|add:i.men|add:i.women}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+
+        {% if district_attendance.has_other_pages %}
+<ul class="pagination">
+    {% if district_attendance.has_previous %}
+        <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page=1">1</a></li>
+        {% if district_attendance.number > 3 %}
+            <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+        {% endif %}
+        {% for i in district_attendance.paginator.page_range %}
+            {% if district_attendance.number|add:-3 <= i <= district_attendance.number|add:3 %}
+                <li class="page-item m-2 {% if i == district_attendance.number %}active{% endif %}">
+                    <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if district_attendance.paginator.num_pages > district_attendance.number|add:3 %}
+            <li class="page-item m-2 disabled"><span class="page-link">...</span></li>
+        {% endif %}
+        <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ district_attendance.paginator.num_pages }}">{{ district_attendance.paginator.num_pages }}</a></li>
+    {% else %}
+        <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">previous</span></li>
+        {% for i in district_attendance.paginator.page_range %}
+            <li class="page-item m-2 {% if i == district_attendance.number %}active{% endif %}">
+                <a class="page-link btn btn-danger" href="?page={{ i }}">{{ i }}</a>
+            </li>
+        {% endfor %}
+        <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ district_attendance.paginator.num_pages }}">{{ district_attendance.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% if district_attendance.has_next %}
+        <li class="page-item m-2"><a class="page-link btn btn-danger" href="?page={{ district_attendance.next_page_number }}">next</a></li>
+    {% else %}
+        <li class="page-item m-2 disabled"><span class="page-link btn btn-danger">next</span></li>
+    {% endif %}
+</ul>
+{% endif %}
+
+    
+        {% else %}
+
+    <center><h1 class="mt-4 text-danger"><b>No Attendance Found</b></h1></center>
+
+    {% endif %}
+  </div>
+  </div>
+</section>
+</div>
+
+
+ 
+<div class="modal fade" id="AddAttendance" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{district}} Attendance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{% url 'add-district-attendance' district.id %}">
+            {% csrf_token %}
+            {{form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+<div class="modal fade" id="filterTransaction" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Filter {{district}} Attendance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="get" action="#" id="myForm">
+              <div class="mb-3 mt-3">
+                <label for="">Filter by Date From</label>
+                <input name ='date__gte' type="date" class="" placeholder="Filter by Date From" >
+              </div>
+  
+              <div class="mb-3 mt-3">
+                <label for="">Filter by Date to</label>
+                <input name ='date__lte' type="date" class="" placeholder="Filter by Date From" >
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Filter</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

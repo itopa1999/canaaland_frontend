@@ -1,0 +1,378 @@
+{% extends 'main.html' %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+<style>
+  .car {
+    margin:6px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  </style>
+<div class="container-fluid col-lg-12" data-aos="fade-up">
+  <div class="pagetitle">
+    <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+        <li class="breadcrumb-item"></li>
+      </ol>
+    </nav>
+  </div>
+  <section class="section dashboard ">
+    <div class="container-fluid">
+    <div class="row"> 
+      <div class="col-lg-8 ">
+        <div class="row ">
+
+          <!-- Sales Card -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card car info-card sales-card">
+              <div class="card-body">
+                <h5 class="card-title">Total District:</h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-cart"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{district}}</h6>
+                    <span class="text-primary small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All District</span>
+                  </div>
+                </div>
+                <div class=" " style='float:right;'>
+                  <a class='text-white btn btn-primary' href="{% url 'admin-district' %}" ><i class="bi bi-eye"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- End Sales Card -->
+
+          <!-- Revenue Card -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card car info-card revenue-card">
+              <div class="card-body">
+                <h5 class="card-title">Total Districts Church Members</h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-chat-right-quote"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{district_member}}</h6>
+                    <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All Districts Church Members</span>
+
+                  </div>
+                </div>
+                <div class=" " style='float:right;'>
+                  <a class='text-white btn btn-success' href="{% url 'admin-district-member' %}" ><i class="bi bi-eye"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- End Revenue Card -->
+
+          <!-- Customers Card -->
+          <div class="col-xxl-4 col-xl-12">
+
+            <div class="card car info-card customers-card">
+              <div class="card-body">
+                <h5 class="card-title">Total District Secretary Admins</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-clipboard-check"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{district_user}}</h6>
+                    <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All District Secretary Admins</span><br>
+
+                  </div>
+                </div>
+                <div class=" " style='float:right;'>
+                  <a class='text-white btn btn-danger' href="{% url 'admin-district-admin' %}" ><i class="bi bi-eye"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- End Customers Card -->
+          <div class="col-xxl-12 col-xl-12">
+
+            <div class="card car info-card customers-card">
+              <div class="card-body">
+                <h5 class="card-title">Transaction Summary:</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-credit-card-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>₦{{income|intcomma}}.00 Total Income</h6>
+                    <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Income from all branch</span><br>
+                  </div>
+                </div>
+                <div class=" " style='float:right;'>
+                  <a class='text-white btn btn-danger' href="{% url 'admin-district-transaction' %}" ><i class="bi bi-eye"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+         
+
+          <!-- Recent Sales -->
+          <div class="col-12">
+            <div class="card car recent-sales overflow-auto">
+              <div class="card-body">
+                <h5 class="card-title">Recent Transactions</h5>
+                {% if transaction %}
+                <table class="table table-borderless datatable">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">District</th>
+                      <th scope="col">Action</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    {% for i in transaction %}
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{i.district}}</td>
+                      <td><a href="" class="text-primary">Click here to view details</a></td>
+                      <td>₦{{i.amount|intcomma}}</td>
+                      {% if i.type == 'Credit' %}
+                      <td><span class="badge bg-success">Credit</span></td>
+                      {% else %}
+                      <td><span class="badge bg-danger">Debit</span></td>
+                      {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <center class='text-danger font-weight-bolder'><i class="bi bi-x-circle"></i>  No Transaction </center>
+                    {% endif %}
+                  </tbody>
+                </table>
+
+              </div>
+
+            </div>
+          </div><!-- End Recent Sales -->
+
+          <!-- Top Selling -->
+          <div class="col-12">
+            <div class="card car top-selling overflow-auto">
+              <div class="card-body pb-0">
+                <h5 class="card-title">Recent Church Members </h5>
+                {% if church_member %}
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">District</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Department</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    
+                    {% for i in church_member %}
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{i.district}}</td>
+                      <td>{{i.name}}</td>
+                      <td>{{i.phone}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.gender}}</td>
+                      <td>{{i.department}}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                  </tbody>
+                  {% else %}
+                    <center class='text-danger font-weight-bolder'><i class="bi bi-x-circle"></i>  No Church Member </center>
+                    {% endif %}
+                </table>
+
+              </div>
+
+            </div>
+          </div>
+          
+          
+        </div>
+      </div><!-- End Left side columns -->
+
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+        <div class="col-xxl-12 col-md-12">
+          <div class="card car info-card sales-card">
+            <div class="card-body">
+              <h5 class="card-title">Total New Members:</h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cart"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>{{district_new_member}}</h6>
+                  <span class="text-primary small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All District New Comer</span>
+                </div>
+              </div>
+              <div class=" " style='float:right;'>
+                <a class='text-white btn btn-primary' href="{% url 'admin-district-new-member' %}" ><i class="bi bi-eye"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-xxl-12 col-md-12">
+          <div class="card car info-card sales-card">
+            <div class="card-body">
+              <h5 class="card-title">Total Sermons:</h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cart"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>{{sermon}}</h6>
+                  <span class="text-primary small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All District New Comer</span>
+                </div>
+              </div>
+              <div class=" " style='float:right;'>
+                <a class='text-white btn btn-primary' href="{% url 'admin-sermon' %}" ><i class="bi bi-eye"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-xxl-12 col-md-12">
+          <div class="card car info-card sales-card">
+            <div class="card-body">
+              <h5 class="card-title">Total Testimonies:</h5>
+
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cart"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>{{testimony}}</h6>
+                  <span class="text-primary small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">All District New Comer</span>
+                </div>
+              </div>
+              <div class=" " style='float:right;'>
+                <a class='text-white btn btn-primary' href="{% url 'admin-testimony' %}" ><i class="bi bi-eye"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+
+
+        <!-- Recent Activity -->
+        <div class="card car">
+          <div class="card-body">
+            <h5 class="card-title">Recent Activity</h5>
+
+            <div class="activity">
+              {% if track %}
+              {% for i in track %}
+              <div class="activity-item d-flex">
+                <div class="activite-label col-4 col-sm-4 col-lg-4"><strong class='text-secondary'>{{i.user}}</strong><br>{{i.date|timesince}} Ago</div>
+                <i class='bi bi-circle-fill activity-badge text-{{i.color}} align-self-start'></i>
+                <div class="activity-content">
+                  {{i.action}}
+                </div>
+              </div><!-- End activity item-->
+              {% endfor %}
+              <center>
+                <div class="mt-3" style='align:center;'>
+                  <a class='text-white btn btn-secondary ' href="{% url 'admin-tracking' %}" ><i class="bi bi-eye"></i> view all</a>
+                </div>
+              </center>
+              {% else %}
+              <center class='text-danger font-weight-bolder'><i class="bi bi-x-circle"></i> No Recent Activity </center>
+              {% endif %}
+              
+
+            </div>
+            
+          </div>
+        </div>     
+
+      </div><!-- End Right side columns -->
+
+    </div>
+    </div>
+  </section>
+<br><br><br>
+  <div class="row">
+    <b><span>{{year.year}} PROGRAM REPORTS</span><hr></b>
+    <div class="card col-lg-6  border-0">
+      <center>
+    <section id="counts" class="counts">
+      <div class="container">
+        <a href="{% url 'admin-member' %}" class="text-dark">
+          <div class="col-lg-6 col-6">
+            <div class="count-box">
+              <i class="bi bi-person-lines-fill"></i><br>
+              <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{member_count}}</span>
+              <p><b>Total Registered Members <br>({{year.year}})</b></p>
+            </div>
+          </div>
+        </a>
+        </div> 
+    </section>
+  </center>
+    </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-attendance' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-check-square"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{attend}}</span>
+                <p><b>Total marked Attendance <br>({{year.year}})</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-question' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-question"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{question_count}}</span>
+                <p><b>Total Question Asked <br>({{year.year}})</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+</div>
+</div>
+
+{% endblock content %}

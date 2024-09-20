@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<style>
+    a:hover{
+        color:black;
+    }
+    #myInput,select{
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+    }
+    f-left {
+      float: left;
+    }
+    
+    .f-right {
+      float: right;
+    }
+    #btn1{
+      background-color:#f82249;
+      padding:15px;
+      color:white;
+      border:2px solid #f82249;
+      border-radius:5px;
+    }
+</style>
+<div class="pagetitle container">
+  <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item">All Testimonies</li>
+      <li class="breadcrumb-item"></li>
+    </ol>
+  </nav>
+</div>
+<div class="container-fluid col-lg-12" data-aos="fade-up">
+    <center>
+        <section id="counts" class="counts">
+          <div class="container">
+              <div class="col-lg-6 col-6">
+                <div class="count-box">
+                    <i class="bi bi-person-lines-fill"></i><br>
+                  <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{ testimony|length }}</span>
+                  <p><b>Total  Testimonies</b></p>
+                </div>
+              </div>
+      
+            </div>
+        </section>
+      </center>
+{% if testimony %}
+{% for i in testimony %}
+<div class="col-lg-6 col-12">
+    <div class="card shadow-lg border-0 p-2">
+        <div class="card-body">
+            <h5 class="card-title"><b>{{i.name}} Shares Testimony</b><br><span style="font-size: smaller;">{{i.email}} ||| {{i.date}}</span> </h5>
+                <p class="text-secondary">
+                    {{i.testimony}}
+                </p>
+                {% if i.approve == True %}
+                <div class=" " style='float:right;'>
+                    <a class='text-white btn btn-danger m-1' href="{% url 'admin-testimony-delete' i.id %}" ><i class="bi bi-trash"></i> Delete</a>
+                </div>
+                {% else %}
+                <div class=" " style='float:right;'>
+                    <a class='text-white btn btn-success m-1' href="{% url 'admin-testimony-approve' i.id %}" ><i class="bi bi-pencil"></i> Approve</a>
+                </div>
+                <div class=" " style='float:right;'>
+                    <a class='text-white btn btn-danger m-1' href="{% url 'admin-testimony-delete' i.id %}" ><i class="bi bi-trash"></i> Delete</a>
+                </div>
+                {% endif %}
+        
+    </div>
+        
+    </div>
+</div>
+{% endfor %}
+{% else %}
+
+<center><h1 class="mt-4 text-danger"><b>No Testimony Found</b></h1></center>
+{% endif %}
+
+
+</div>
+{% endblock content %}

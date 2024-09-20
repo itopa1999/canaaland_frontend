@@ -1,0 +1,270 @@
+{% load static %}
+{% include 'msg.html' %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DCC YOUTH POWER EXPLOSION 2024</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.jpg' %}" rel="icon">
+  <link href="{% static 'assets/img/favicon.jpg' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <style>
+    .btn1{
+      background-color:#f82249;
+      padding:15px;
+      color:white;
+      border:2px solid #f82249;
+      border-radius:5px;
+    }
+    </style>
+
+</head>
+
+<body onload="message()">
+  <header id="header" class="d-flex align-items-center bg-dark">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        {% if request.user.is_authenticated %}
+        {% if user.groups.all.0.name == 'admin' %}
+        <a href="{% url 'admin-dashboard' %}" class="scrollto"><img src="{% static 'assets/img/logo.png' %}" alt="" title=""></a>
+        <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+        {% elif user.groups.all.0.name == 'secretary' %}
+        <a href="{% url 'secretary-dashboard' %}" class="scrollto"><img src="{% static 'assets/img/logo.png' %}" alt="" title=""></a>
+        <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+        {% endif %}
+        {% else %}
+        <a href="{% url 'index' %}" class="scrollto"><img src="{% static 'assets/img/logo.png' %}" alt="" title=""></a>
+        <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+        {% endif %}
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          {% if request.user.is_authenticated %}
+          {% if user.groups.all.0.name == 'admin' %}
+          <li><a class="nav-link scrollto active" href="{% url 'admin-dashboard' %}">Home</a></li>
+          <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'admin-district' %}">All District</a></li>
+              <li><a href="{% url 'admin-district-member' %}">All Districts Church Members</a></li>
+              <li><a href="{% url 'admin-district-new-member' %}">All Districts New Church Members</a></li>
+              <li><a href="{% url 'admin-district-admin' %}">District Secretary Admins</a></li>
+              <li><a href="{% url 'admin-district-transaction' %}">Transaction Summary</a></li>
+              <li><a href="{% url 'admin-sermon' %}">All Sermon</a></li>
+              <li><a href="{% url 'admin-testimony' %}">All Testimony</a></li>
+              <li><a href="{% url 'admin-tracking' %}">All Activity</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li><a class="nav-link scrollto active" href="{% url 'secretary-dashboard' %}">Home</a></li>
+          {% endif %}
+          <li><a class="nav-link scrollto " href="{% url 'admin-program' %}">Dcc Youth Program</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'admin-member' %}">Registered Members</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'admin-question' %}">Question</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'hymns' %}">Hymns</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'rules' %}">Life during conference</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'tenets' %}">Tenets of C.A.C</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'vision' %}">Vision and Mission</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'fft' %}">Food for thought</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      {% if request.user.is_authenticated %}
+      <a class="buy-tickets scrollto"  data-bs-toggle="modal" data-bs-target="#buy-ticket-modal"  href="#">Logout</a>
+      {% else %}
+      <a class="buy-tickets scrollto"  data-bs-toggle="modal" data-bs-target="#register"  href="#">Register</a>
+      {% endif %}
+    </div>
+  </header><!-- End Header -->
+
+  <div id="buy-ticket-modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">You Are About To Leave This Page</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+        <a class="btn btn-danger" style="text-decoration:none;" href="{% url 'admin-logout' %}">Logout</a>
+    </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="register" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><strong>REGISTRATION FORM</strong></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'register_form' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              {% render_field form.name|attr:'required:true' class=" " placeholder="Name" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.email  placeholder="Email" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.phone|attr:'required:true' class=" " placeholder="Phone Number" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.gender|attr:'required:true' class=" " %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.assembly class=" " placeholder="Assembly" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.district class=" " placeholder="District" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.denomination class=" " placeholder="Denomination" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.country|attr:'required:true' class=" " placeholder="Country" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.state|attr:'required:true' class=" " placeholder="State" %}
+            </div>
+            <div class="form-group mt-3">
+              {% render_field form.departmentID class=" "  %}
+
+            </div>
+            <div class="text-right mt-3">
+              <button type="submit"  class="btn btn-success">Register</button>
+              <button type="button"  class="btn1" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</button>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+
+  <div id="attendance" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><strong>ATTENDANCE FORM (verification)</strong></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'attendance' %}">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+              <select class="select" name='day' required>
+                <option value="">---- Choose Day ----</option>
+                <option value="day1">Day 1</option>
+                <option value="day2">Day 2</option>
+                <option value="day3">Day 3</option>
+                <option value="day4">Day 4</option>
+              </select>
+            <div class="form-group">
+              <input type="text" name="member" class="" id="name" placeholder="Enter Email / Phone No for verification." required>
+            </div>
+            <div class="text-right mt-3">
+              <button type="submit"  class="btn1">Submit Attendance</button>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div></div></div><!-- /.modal-dialog -->
+<br><br><br><br><br><br>
+
+{% block content %}
+
+{% endblock content %}
+{% if request.user.is_authenticated %}
+{% else %}
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-4 footer-info">
+          <img src="{% static 'assets/img/logo.png' %}" alt="TheEvenet">
+          <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+          <br>
+          <p style="font-size:20px;"><u>Featuring:</u></p><br>
+          <p><i class="bi bi-dot"></i> MARITAL TALK <br><i class="bi bi-dot"></i> DELIVERANCE IMPARTATION <br>
+            <i class="bi bi-dot"></i> TALENT HUNT<br> <i class="bi bi-dot"></i> EMPOWERMENT <br><i class="bi bi-dot"></i> GAME SHARE AND CARE <br>
+            <i class="bi bi-dot"></i> SALVATION<br><i class="bi bi-dot"></i> MARRIAGE SEMINAR<br><i class="bi bi-dot"></i> CAREER TALK<br>
+            <i class="bi bi-dot"></i> HEALTH TALK<br> <i class="bi bi-dot"></i>ENTERPRENEURSHIP TALK.</p>
+          
+          </div>
+
+
+        <div class="col-lg-4 col-md-4 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            CANAANLAND DCC HEADQUATERS: <br>
+            KLM 2, Omifunfun Road, Olode Ile-Ife<br>
+             Osun State, Nigeria.<br>
+            <strong>Phone:<br></strong> +2348034311378<br>
+            +2348032816426<br>
+            +2348065692668<br>
+            +2348104877264<br>
+            <strong>Email:</strong>caccanaanlanddccyouth@gmail.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-4 col-md-4 footer-contact">
+          <h4>Sponsors Us</h4>
+          <b><i>To support the program financially</i></b>
+          <p>
+            ACCOUNT NAME: CAC Cannaland Youth Convention <br>
+            BAMK NAME: Zenith Bank <br>
+            ACCOUNT NUMBER: <span class="" style="font-size: 18px; font-weight: 600;">1014577243</span> <br>
+          </p>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+{% endif %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor js' %} Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script type="text/javascript" src="{% static '/assets/js/sweetalert2.all.min.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+{% extends 'main.html' %}
+<style>
+  .card:hover {
+      
+    
+}
+</style>
+{% block content %}
+<div class="container col-lg-12" data-aos="fade-up">
+  <div class="pagetitle container">
+    <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+    <nav>
+      <ol class="breadcrumb">
+        {% if user.groups.all.0.name == 'admin' %}
+        <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+        {% endif %}
+        {% if user.groups.all.0.name == 'secretary' %}
+        <li class="breadcrumb-item"><a href="{% url 'secretary-dashboard' %}">Dashboard</a></li>
+        {% endif %}
+        <li class="breadcrumb-item">Program Report</li>
+        <li class="breadcrumb-item"></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="row">
+    <b><span>2024 REPORTS</span><hr></b>
+    <div class="card col-lg-6  border-0">
+      <center>
+    <section id="counts" class="counts">
+      <div class="container">
+        <a href="{% url 'admin-member' %}" class="text-dark">
+          <div class="col-lg-6 col-6">
+            <div class="count-box">
+              <i class="bi bi-person-lines-fill"></i><br>
+              <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{count_2024}}</span>
+              <p><b>Total Registered Members <br>(2024)</b></p>
+            </div>
+          </div>
+        </a>
+        </div> 
+    </section>
+  </center>
+    </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-attendance' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-check-square"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{attend_2024}}</span>
+                <p><b>Total marked Attendance <br>(2024)</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-question' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-question"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{question_count_2024}}</span>
+                <p><b>Total Question Asked <br>(2024)</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+
+    <b><span>2023 REPORTS</span><hr></b>
+
+  <div class="card col-lg-6  border-0">
+    <center>
+  <section id="counts" class="counts">
+    <div class="container">
+      <a href="{% url 'admin-member' %}" class="text-dark">
+        <div class="col-lg-6 col-6">
+          <div class="count-box">
+            <i class="bi bi-person-lines-fill"></i><br>
+            <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{count_2023}}</span>
+            <p><b>Total Registered Members <br>(2023)</b></p>
+          </div>
+        </div>
+      </a>
+      </div>
+  </section>
+</center>
+  </div>
+
+  <div class="card col-lg-6  border-0"><center>
+    <section id="counts" class="counts">
+      <div class="container">
+        <a href="{% url 'admin-question' %}" class="text-dark">
+          <div class="col-lg-6 col-6">
+            <div class="count-box">
+              <i class="bi bi-question"></i><br>
+              <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{question_count_2023}}</span>
+              <p><b>Total Question Asked <br>(2023)</b></p>
+            </div>
+          </div>
+        </a>
+        </div>
+    </section>
+  </center>
+    </div>
+
+    <b><span>OVERALL REPORTS</span><hr></b>
+
+    <div class="card col-lg-6  border-0">
+      <center>
+    <section id="counts" class="counts">
+      <div class="container">
+        <a href="{% url 'admin-member' %}" class="text-dark">
+          <div class="col-lg-6 col-6">
+            <div class="count-box">
+              <i class="bi bi-person-lines-fill"></i><br>
+              <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{count_2023|add:count_2024}}</span>
+              <p><b>Overall Total Registered Member <br>(ALL YEARS)</b></p>
+            </div>
+          </div>
+        </a>
+        </div>
+    </section>
+  </center>
+    </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-attendance' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-check-square"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{attend_2024}}</span>
+                <p><b>Overall Total marked Attendance <br>(ALL YEARS)</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+
+    <div class="card col-lg-6  border-0"><center>
+      <section id="counts" class="counts">
+        <div class="container">
+          <a href="{% url 'admin-question' %}" class="text-dark">
+            <div class="col-lg-6 col-6">
+              <div class="count-box">
+                <i class="bi bi-question"></i><br>
+                <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{question_count_2023|add:question_count_2024}}</span>
+                <p><b>Overall Total Question Asked <br>(ALL YEARS)</b></p>
+              </div>
+            </div>
+          </a>
+          </div>
+      </section>
+    </center>
+      </div>
+
+    </section>
+  </center>
+</div>
+
+
+</div>
+</div>
+
+{% endblock content %}

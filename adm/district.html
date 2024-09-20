@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+</style>
+
+<div class="container col-lg-12" data-aos="fade-up">
+  <div class="pagetitle">
+    <h4>Welcome Back {{request.user.first_name}} <i class="bi bi-person-fill"></i></h4>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+        <li class="breadcrumb-item">All Districts</li>
+        <li class="breadcrumb-item"></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+  <button data-bs-toggle="modal" data-bs-target="#AddDistrict" type="button" class="btn btn-success m-2"><i class="bi bi-plus"></i>. Add District</button>
+  </div>
+    <div class="row mt-4">
+        <b><span>Total District: {{district|length}}</span><hr></b>
+        {% if district %}
+        {% for i in district %}
+        <div class="card col-lg-6  border-0">
+          <center>
+        <section id="counts" class="counts">
+          <div class="container">
+            <a href="{% url 'admin-disrict-details' i.id %}" class="text-dark">
+              <div class="col-lg-6 col-6">
+                <div class="count-box">
+                  <i class="bi bi-person-lines-fill"></i><br>
+                  <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter">{{member_count}}</span>
+                  <p><b>{{i.name}} <br>({{i.address}})</b></p>
+                </div>
+              </div>
+            </a>
+            </div> 
+        </section>
+      </center>
+        </div>
+        {% endfor %}
+        {% else %}
+        <center ><h1 class='text-danger mt-4 font-weight-bolder'><i class="bi bi-x-circle"></i>  No District Found </h1></center>
+        {% endif %}
+        
+</div>
+</div>
+
+
+  
+<div class="modal fade" id="AddDistrict" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add District</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
