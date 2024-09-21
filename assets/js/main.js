@@ -229,3 +229,44 @@
   });
 
 })()
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Check for the token in localStorage
+  const token = localStorage.getItem('token');
+  const FirstName = localStorage.getItem('firstname');
+  const first_name = document.getElementById('first_name');
+  const logoutBtn = document.getElementById('logout-btn');
+  const dashboard_admin = document.getElementById('dashboard-admin')
+  const dashboard_unuser = document.getElementById('dashboard-unuser')
+
+
+  if (token !== null && token !== 'undefined') {
+    try{
+      if (FirstName !== null && FirstName !== 'undefined') {
+        first_name.innerHTML = FirstName;
+      }else{
+        first_name.innerHTML = "None";
+      }
+      dashboard_admin.classList.remove('d-none')
+    }catch{
+      dashboard_admin.classList.remove('d-none')
+    }
+  } else {
+    logoutBtn.classList.add('d-none');
+    dashboard_unuser.classList.remove('d-none')
+  }
+
+  // Optional: You can also handle the logout action to remove the token
+  logoutBtn.addEventListener('click', function() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('firstname');
+      window.location.href = 'login.html';
+
+  });
+});
+
+

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DCC YOUTH POWER EXPLOSION 2024</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    a:hover{
+        color:black;
+    }
+    #myInput,select{
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+    }
+    f-left {
+      float: left;
+    }
+    
+    .f-right {
+      float: right;
+    }
+    #btn1{
+      background-color:#f82249;
+      padding:15px;
+      color:white;
+      border:2px solid #f82249;
+      border-radius:5px;
+    }
+    </style>
+
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center bg-dark">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <a href="dashboard.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
+        <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+        
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="dashboard.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="hymns.html">Hymns</a></li>
+          <li><a class="nav-link scrollto" href="rules.html">Life during conference</a></li>
+          <li><a class="nav-link scrollto" href="tenets.html">Tenets of C.A.C</a></li>
+          <li><a class="nav-link scrollto" href="vision.html">Vision and Mission</a></li>
+          <li><a class="nav-link scrollto" href="fft.html">Food for thought</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a class="buy-tickets scrollto" id="logout-btn" href="#!">Logout</a>
+    </div>
+  </header><!-- End Header -->
+  <br><br><br><br><br>
+<div class="container-fluid col-lg-12" data-aos="fade-up">
+  <div class="alert alert-danger  container d-none" id="error-alert">
+    <strong>Error!</strong> <span id="message"></span>
+  </div>
+  <div class="pagetitle">
+    <h4>Welcome Back <span id="first_name"></span> <i class="bi bi-person-fill"></i></h4>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+      <li class="breadcrumb-item">Program Attendance Report</li>
+      <li class="breadcrumb-item"></li>
+      </ol>
+    </nav>
+  </div>
+<br><br><br>
+
+
+<div class="container-fluid col-lg-12" data-aos="fade-up">
+    <center>
+        <section id="counts" class="counts">
+          <div class="container">
+              <div class="col-lg-6 col-6">
+                <div class="count-box">
+                    <i class="bi bi-check-square"></i><br>
+                  <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1" class="purecounter" id="count">0</span>
+                  <p><b>Total Marked Attendance</b></p>
+                </div>
+              </div>
+      
+            </div>
+        </section>
+      </center>
+        
+          <center>
+            <div class="container-fluid">
+                  <button type="button" id="download" class="btn btn-success m-2"><i class="bi bi-download"></i> Download all marked Attendance</button>
+                  <button data-bs-toggle="modal" data-bs-target="#filterAttendance" type="button" class="m-2 btn btn-primary"><i class="bi bi-filter"></i>. Filters</button>
+              </div>
+      </center>
+      <section>
+        <div class="container-fluid">
+          <div class="table-responsive-sm">
+            <table class="table" id="attendance-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email Address</th>
+                  <th>Phone Number</th>
+                  <th>Gender</th>
+                  <th>Day</th>
+                  <th>Assembly</th>
+                  <th>District</th>
+                  <th>DateTime</th>
+                  <th>Department</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+              </tbody>
+            </table>
+      </div>
+      <div></div>
+        <center>
+          <a id="preBtn" href="#" class="btn btn-secondary m-2"><i class="bi bi-arrow-left"></i> Previous</a>
+          <a id="nextBtn" href="#" class="btn btn-secondary m-2"> next <i class="bi bi-arrow-right"></i></a>
+        </center>
+      </div>
+      </div>
+    </section>
+</div>
+
+<br><br><br><br>
+     
+<div class="modal fade" id="filterAttendance" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Filter/Sort Marked Attendance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <span class="text-danger" style="font-size: x-small;font-weight: 600;">filter by 'name', 'email','phone','gender','assembly',
+                'district','department name','date','day'</span>
+              <input id='searchInput' type="text" class="" placeholder=" Filter by">
+          </div>
+          <select class="select mt-3" id='orderingSelect'>
+            <option value="">---- Sort by ----</option>
+            <option value="member__name">Name</option>
+            <option value="member__department">Department</option>
+            <option value="day">Day</option>
+            <option value="date">Date</option>
+          </select>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-4 col-md-4 footer-info">
+            <img src="assets/img/logo.png" alt="TheEvenet">
+            <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
+            <br>
+            <p style="font-size:20px;"><u>Featuring:</u></p><br>
+            <p><i class="bi bi-dot"></i> MARITAL TALK <br><i class="bi bi-dot"></i> DELIVERANCE IMPARTATION <br>
+              <i class="bi bi-dot"></i> TALENT HUNT<br> <i class="bi bi-dot"></i> EMPOWERMENT <br><i class="bi bi-dot"></i> GAME SHARE AND CARE <br>
+              <i class="bi bi-dot"></i> SALVATION<br><i class="bi bi-dot"></i> MARRIAGE SEMINAR<br><i class="bi bi-dot"></i> CAREER TALK<br>
+              <i class="bi bi-dot"></i> HEALTH TALK<br> <i class="bi bi-dot"></i>ENTERPRENEURSHIP TALK.</p>
+            
+            </div>
+  
+  
+          <div class="col-lg-4 col-md-4 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              CANAANLAND DCC HEADQUATERS: <br>
+              KLM 2, Omifunfun Road, Olode Ile-Ife<br>
+               Osun State, Nigeria.<br>
+              <strong>Phone:<br></strong> +2348034311378<br>
+              +2348032816426<br>
+              +2348065692668<br>
+              +2348104877264<br>
+              <strong>Email:</strong>caccanaanlanddccyouth@gmail.com<br>
+            </p>
+          </div>
+  
+          <div class="col-lg-4 col-md-4 footer-contact">
+            <h4>Sponsors Us</h4>
+            <b><i>To support the program financially</i></b>
+            <p>
+              ACCOUNT NAME: CAC Cannaland Youth Convention <br>
+              BAMK NAME: Zenith Bank <br>
+              ACCOUNT NUMBER: <span class="" style="font-size: 18px; font-weight: 600;">1014577243</span> <br>
+            </p>
+            
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor js Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/sweetalert2.all.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/attendance.js"></script>
+  
+  </body>
+  
+  </html>
+  
+

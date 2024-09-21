@@ -1,6 +1,3 @@
-{% load static %}
-{% include 'msg.html' %}
-{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,19 +10,19 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.jpg' %}" rel="icon">
-  <link href="{% static 'assets/img/favicon.jpg' %}" rel="apple-touch-icon">
+  <link href="assets/img/favicon.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
   <style>
     .btn1{
       background-color:#f82249;
@@ -80,7 +77,7 @@
         <div class="container-fluid container-xxl d-flex align-items-center">
 
           <div id="logo" class="me-auto">
-            <a href="{% url 'index' %}" class="scrollto"><img src="{% static 'assets/img/logo.png' %}" alt="" title=""></a>
+            <a href="index" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
           <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
           </div>
 
@@ -94,11 +91,11 @@
               <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</a></li>
-                  <li><a href="{% url 'hymns' %}">Hymns</a></li>
-                  <li><a href="{% url 'rules' %}">Life During Conference</a></li>
-                  <li><a href="{% url 'tenets' %}">Tenets of C.A.C</a></li>
-                  <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
-                  <li><a href="{% url 'fft' %}">Food for thought</a></li>
+                  <li><a href="hymns.html">Hymns</a></li>
+                  <li><a href="rules.html">Life During Conference</a></li>
+                  <li><a href="tenets.html">Tenets of C.A.C</a></li>
+                  <li><a href="vision.html">Vision and Mission</a></li>
+                  <li><a href="fft.html">Food for thought</a></li>
                 </ul>
               </li>
               <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -159,7 +156,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/3.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/3.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Prophet Dr. Hezekiah Oladeji</a></h3>
                 <p>C.A.C Gen. Evang. Nigeria & Overseas</p>
@@ -172,7 +169,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="{% static 'assets/img/speakers/5.jpg' %}" alt="Speaker 1" class="img-fluid">
+              <img src="assets/img/speakers/5.jpg" alt="Speaker 1" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Pastor D.B Osunrayi</a></h3>
                 <p>CAC CANAANLAND DCC Suprintendent </p>
@@ -185,7 +182,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/1.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/1.jpg" alt="Speaker 6" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Prophet Akinola Fasawe</a></h3>
                 <p>GUEST</p>
@@ -197,7 +194,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/8.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/8.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Lady/Evangelist Esther Oladeji</a></h3>
                 <p>Mummy G.O</p>
@@ -211,7 +208,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/9.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/9.jpg" alt="Speaker 6" class="img-fluid">
               <div class="details">
                 <h3><a href="#">pastor Mayowa Ojo</a></h3>
                 <p>DCC YOUTH PASTOR</p>
@@ -224,7 +221,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/2.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/2.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Pastor Gideon</a></h3>
                 <p>English Assembly Pastor</p>
@@ -239,7 +236,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/4.jpg' %}" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/4.jpg" alt="Speaker 6" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Shade Taiwo</a></h3>
                 <p>GUEST</p>
@@ -251,7 +248,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/6.jpg' %}" height="50" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/6.jpg" height="50" alt="Speaker 6" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Tope Olotokun</a></h3>
                 <p>GUEST</p>
@@ -263,7 +260,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/10.jpg' %}" height="50" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/10.jpg" height="50" alt="Speaker 6" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Minister Oluwatimilehin Emmanuel </a></h3>
                 <p>DCC YOUTH COORDINATOTR</p>
@@ -274,7 +271,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/8.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/8.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Pastor Paul Olalekan</a></h3>
                 <p>GUEST PASTOR</p>
@@ -286,7 +283,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/11.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/11.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Evangelist Busayo Emmanuel</a></h3>
                 <p>DCC YOUTH CHOIR COORDINATOR</p>
@@ -298,7 +295,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="{% static 'assets/img/speakers/7.jpg' %}" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/7.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
                 <h3><a href="#">Bro Ogunwale Seye</a></h3>
                 <p>PROTOCOL AND DATA OFFICER</p>
@@ -364,7 +361,7 @@
               </div>
               <div class="col-md-4 col-4"><time>5:00pm - 5:10pm</time></div>
               <div class="col-md-8 col-8">
-                <h4>Opening Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a> </h4> 
+                <h4>Opening Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a> </h4> 
               </div>
               <div class="col-md-4 col-4"><time>5:10pm - 5:25pm</time></div>
               <div class="col-md-8 col-8">
@@ -389,7 +386,7 @@
               <div class="col-md-4 col-4"><time>6:25pm - 7:25pm</time></div>
               <div class="col-md-8 col-8">
                 <div class="speaker">
-                  <img src="{% static 'assets/img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                  <img src="assets/img/speakers/2.jpg" alt="Hubert Hirthe">
                 </div>
                 <h4>First lecture by Pastor Gideon  </h4>
                 <h5>Bible Verse : --------</h5>
@@ -478,7 +475,7 @@
             </div>
             <div class="col-md-4 col-4"><time>9:30am - 9:40am</time></div>
             <div class="col-md-8 col-8">
-              <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+              <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
             </div>
             <div class="col-md-4 col-4"><time>9:40am - 10:20am</time></div>
             <div class="col-md-8 col-8">
@@ -487,7 +484,7 @@
             <div class="col-md-4 col-4"><time>10:20am - 11:20am</time></div>
             <div class="col-md-8 col-8">
               <div class="speaker">
-                <img src="{% static 'assets/img/speakers/5.jpg' %}" alt="Hubert Hirthe">
+                <img src="assets/img/speakers/5.jpg" alt="Hubert Hirthe">
               </div>
               <h4>Lecture 2 by DCC Chairman </h4>
               <h5>Pastor D.B Osunrayi</h5>
@@ -503,7 +500,7 @@
             <div class="col-md-4 col-4"><time>12:05pm - 12:55pm</time></div>
             <div class="col-md-8 col-8">
               <div class="speaker">
-                <img src="{% static 'assets/img/speakers/6.jpg' %}" alt="Hubert Hirthe">
+                <img src="assets/img/speakers/6.jpg" alt="Hubert Hirthe">
               </div>
               <h4>Ministration by Gospel Artist: </h4>
               <h5>Tope Olotokun</h5>
@@ -527,7 +524,7 @@
             </div>
             <div class="col-md-4 col-4 "><time>3:50pm - 4:00pm</time></div>
             <div class="col-md-8 col-8">
-            <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a> </h4>
+            <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a> </h4>
           </div>
           <div class="col-md-4 col-4 "><time>4:00pm - 4:15pm</time></div>
               <div class="col-md-8 col-8">
@@ -575,7 +572,7 @@
             <div class="col-md-4 col-4 "><time>11:30pm - 12:30pm</time></div>
               <div class="col-md-8 col-8">
                 <div class="speaker">
-                  <img src="{% static 'assets/img/speakers/6.jpg' %}" alt="Hubert Hirthe">
+                  <img src="assets/img/speakers/6.jpg" alt="Hubert Hirthe">
                 </div>
               <h4>Ministration by invited minister </h4>
               <h5>Evangelist Olotokun</h5>
@@ -638,7 +635,7 @@
                 </div>
                 <div class="col-md-4 col-4 "><time>9:20am - 9:30am</time></div>
                   <div class="col-md-8 col-8">
-                  <h4>Congregational Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                  <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
                 </div>
                 <div class="col-md-4 col-4 "><time>9:30am - 10:00am</time></div>
                   <div class="col-md-8 col-8">
@@ -677,7 +674,7 @@
                 </div>
                 <div class="col-md-4 col-4"><time>3:20pm - 3:30pm</time></div>
                   <div class="col-md-8 col-8">
-                  <h4>Congregational Hymn  <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                  <h4>Congregational Hymn  <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
                 </div>
                 <div class="col-md-4 col-4"><time>3:30pm - 4:00pm</time></div>
                   <div class="col-md-8 col-8">
@@ -699,7 +696,7 @@
                 <div class="col-md-4 col-4"><time>6:10pm - 7:00pm</time></div>
                   <div class="col-md-8 col-8">
                     <div class="speaker">
-                      <img src="{% static 'assets/img/8.jpg' %}" alt="Hubert Hirthe">
+                      <img src="assets/img/8.jpg" alt="Hubert Hirthe">
                     </div>
                     <h4>Impactation hour(peniel Experience)</h4>
                   <h4>Pastor Olalekan</h4>
@@ -741,7 +738,7 @@
                 <div class="col-md-4 col-4"><time>1:20am - 2:20am</time></div>
                   <div class="col-md-8 col-8">
                     <div class="speaker">
-                      <img src="{% static 'assets/img/speakers/4.jpg' %}" alt="Hubert Hirthe">
+                      <img src="assets/img/speakers/4.jpg" alt="Hubert Hirthe">
                     </div>
                   <h4>Ministration Gospel Artist: </h4>
                   <h5>Lady Shade Taiwo </h5>
@@ -768,7 +765,7 @@
                 </div>
                 <div class="col-md-4 col-4"><time>4:40am - 4:50am</time></div>
                   <div class="col-md-8 col-8">
-                  <h4>Closing Hymn <a class="btn btn-danger" href="{% url 'hymns' %}">Open Hymns</a></h4>
+                  <h4>Closing Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
                 </div>
                 <div class="col-md-4 col-4"><time>4:50am - 5:00am</time></div>
                   <div class="col-md-8 col-8">
@@ -792,7 +789,7 @@
         <div class="row">
      
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+              <div class="card car border-0" style="background-image: url('assets/img/3.jpg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">LIFE IN CONFERENCE</h3>
@@ -804,7 +801,7 @@
                   Your cooperation is appreciated.
                   </p>
                     <div>
-                      <a href="{% url 'rules' %}" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
+                      <a href="rules" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
                     </div>
                   
                     </div>
@@ -813,7 +810,7 @@
           </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+              <div class="card car car border-0" style="background-image: url('assets/img/3.jpg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">HYMNS</h3>
@@ -823,7 +820,7 @@
                     Experience the spiritual journey through the soothing verses of this hymns. <br>Click on the link below to immerse yourself in the timeless beauty of it messages.
                   </p>
                      <div>
-                      <a href="{% url 'hymns' %}" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
+                      <a href="hymns.html" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
                     </div>
                  
                     </div>
@@ -832,7 +829,7 @@
           </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car border-0" style="background-image: url('{% static 'assets/img/3.jpg' %}');">
+              <div class="card car border-0" style="background-image: url('assets/img/3.jpg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">ATTENDANCE</h3>
@@ -875,7 +872,7 @@
 
         <div class="row g-0">
           <div class="col-lg-6 venue-map">
-            <iframe src="{% static 'assets/img/4.jpg' %}" frameborder="0" style="border:0"></iframe>
+            <iframe src="assets/img/4.jpg" frameborder="0" style="border:0"></iframe>
           </div>
 
           <div class="col-lg-6 venue-info">
@@ -930,41 +927,52 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="{% url 'register_form' %}">
-                {% csrf_token %}
+              <div class="alert alert-danger  container d-none" id="error-alert2">
+                <strong>Error! </strong> <span id="error-message2"></span>
+              </div>
+              <div class="alert alert-success  container d-none" id="success-alert2">
+                <strong>success! </strong> <span id="success-message2"></span>
+              </div>
+              <form method="POST" class="register-form" id="registering-form">
                 <div class="form-group">
-                  {% render_field form.name|attr:'required:true' class=" " placeholder="Name" %}
+                  <input type="text" class="" name="name" placeholder="Name" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.email class=" " placeholder="Email" %}
+                  <input type="email" class="" name="email" placeholder="Email">
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.phone|attr:'required:true' class=" " placeholder="Phone Number" %}
+                  <input type="number" class="" name="phone" placeholder="Phone Number" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.gender|attr:'required:true' class=" " %}
+                  <select name="gender" id="" required>
+                    <option value="">Choose Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.assembly class=" " placeholder="Assembly" %}
+                  <input type="text" class="" name="assembly" placeholder="Assembly" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.district class=" " placeholder="District" %}
+                  <input type="text" class="" name="district" placeholder="District" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.denomination class=" " placeholder="Denomination" %}
+                  <input type="text" class="" name="denomination" placeholder="Denomination">
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.country|attr:'required:true' class=" " placeholder="Country" %}
+                  <input type="text" value="Nigeria" name="country" placeholder="Country" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.state|attr:'required:true' class=" " placeholder="State" %}
+                  <input type="text" class="" name="state" placeholder="State" required>
                 </div>
                 <div class="form-group mt-3">
-                  {% render_field form.departmentID class=" "  %}
-
+                  <select name="department" id="departmentSelect" required>
+                    <option value="">Choose Department</option>                    
+                  </select>
                 </div>
                 <div class="text-right mt-3">
-                  <button type="submit"  class="btn btn-success">Register</button>
+                  <button type="submit" class="btn btn-success"><span class="" id="login-text2">Submit Registration <i class="bi bi-arrow-right"></i>
+                  </span> <div id="spinner2" class="spinner-border text-white d-none"></div></button>
                   <button type="button"  class="btn1" data-bs-toggle="modal" data-bs-target="#attendance">Take Attendance</button>
                 </div>
               </form>
@@ -980,9 +988,15 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
               <h4 class="modal-title"><strong>ATTENDANCE FORM (verification)</strong></h4>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            
             <div class="modal-body">
-              <form method="POST" action="{% url 'attendance' %}">
-                {% csrf_token %}
+              <div class="alert alert-danger  container d-none" id="error-alert1">
+                <strong>Error! </strong> <span id="error-message1"></span>
+              </div>
+              <div class="alert alert-success  container d-none" id="success-alert1">
+                <strong>success! </strong> <span id="success-message1"></span>
+              </div>
+              <form method="POST" class="attendance-form" id="attend-form">
                 <div class="mb-3 mt-3">
                   <select class="select" name='day' required>
                     <option value="">---- Choose Day ----</option>
@@ -995,7 +1009,8 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
                   <input type="text" name="member" class="" id="name" placeholder="Enter Email / Phone No for verification." required>
                 </div>
                 <div class="text-right mt-3">
-                  <button type="submit"  class="btn1">Submit Attendance</button>
+                  <button type="submit" class="btn1"><span class="" id="login-text1">Submit Attendance <i class="bi bi-arrow-right"></i>
+                  </span> <div id="spinner1" class="spinner-border text-white d-none"></div></button>
                 </div>
               </form>
             </div>
@@ -1060,7 +1075,7 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
           <div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="{% static 'assets/img/act1.jpg' %}" alt="Hotel 1" class="img-fluid">
+                <img src="assets/img/act1.jpg" alt="Hotel 1" class="img-fluid">
               </div>
               <h3><a href="#">PICTURE 1</a></h3>
               <p> </p>
@@ -1070,7 +1085,7 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
           <div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="{% static 'assets/img/act2.jpg' %}" alt="Hotel 2" class="img-fluid">
+                <img src="assets/img/act2.jpg" alt="Hotel 2" class="img-fluid">
               </div>
               <h3><a href="#">ALL COMPETITORS</a></h3>
               <p>Mixture of the competitors.</p>
@@ -1080,7 +1095,7 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
           <div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="{% static 'assets/img/act2.jpg' %}" alt="Hotel 3" class="img-fluid">
+                <img src="assets/img/act2.jpg" alt="Hotel 3" class="img-fluid">
               </div>
               <h3><a href="#"></a></h3>
               
@@ -1137,8 +1152,13 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
         </div>
 
         <div class="form">
-            <form action="{% url 'question' %}" method="POST" role="form" class="php-email-form">
-            {% csrf_token %}
+          <div class="alert alert-danger  container d-none" id="error-alert">
+            <strong>Error! </strong> <span id="error-message"></span>
+          </div>
+          <div class="alert alert-success  container d-none" id="success-alert">
+            <strong>success! </strong> <span id="success-message"></span>
+          </div>
+            <form class="question-form" id="question">
             <div class="row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="" id="name" placeholder="Your Name" required>
@@ -1154,7 +1174,10 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
               <textarea class="" name="question" rows="5" placeholder="Question" required></textarea>
             </div>
 
-            <div class="text-center mt-3"><button type="submit" class="btn1">Send Question</button></div>
+            <div class="text-center mt-3">
+              <button type="submit" class="btn1"><span class="" id="login-text">Send Question <i class="bi bi-arrow-right"></i>
+              </span> <div id="spinner" class="spinner-border text-white d-none"></div></button>
+            </div>
           </form>
         </div>
 
@@ -1170,7 +1193,7 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
         <div class="row">
 
           <div class="col-lg-4 col-md-4 footer-info">
-            <img src="{% static 'assets/img/logo.png' %}" alt="TheEvenet">
+            <img src="assets/img/logo.png" alt="TheEvenet">
             <div class="text-white"> CANAANLAND DCC HEADQUATERS</div>
             <br>
             <p style="font-size:20px;"><u>Featuring:</u></p><br>
@@ -1243,16 +1266,17 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
 </div>
 
 
-  <!-- Vendor js' %} Files -->
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <!-- Vendor js Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <script type="text/javascript" src="{% static '/assets/js/sweetalert2.all.min.js' %}"></script>
+  <script type="text/javascript" src="assets/js/sweetalert2.all.min.js"></script>
 
-  <script src="{% static 'assets/js/main.js' %}"></script>
-  <script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <scrpt>
     // Display the modal on page load
     document.addEventListener("DOMContentLoaded", function() {
       setTimeout(function() {
@@ -1262,7 +1286,6 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
     });
 </script>
 
-{% include 'msg.html' %}
 </body>
 
 </html>
