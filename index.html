@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DCC YOUTH POWER EXPLOSION 2024</title>
+  <title>DCC YOUTH POWER EXPLOSION 2025</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/cloth.css" rel="stylesheet">
   <style>
     .btn1{
       background-color:#f82249;
@@ -63,10 +64,298 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.849);
   transition: opacity 0.3s ease;
   border-radius: 5px;
 }
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  animation: typing 3s steps(5) forwards;
+  width: 0;
+  color: #ffd93d;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 8px rgba(255,107,107,0.2);
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+@keyframes typing {
+  to { width: 5.5ch; } /* 5 characters in "Y.P.E" (1ch ≈ 1 character width) */
+}
+
+h1 span {
+  font-size: 1.8rem;
+  display: block;
+  font-style: italic;
+  color: #ffcc00;
+}
+
+/* Fire Text Container */
+.fire-container {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+}
+
+/* Enhanced Text Animation */
+@keyframes fireGlow {
+  0% {
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff8c00;
+    filter: brightness(1.2);
+  }
+  50% {
+    text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff4500, 0 0 40px #ff2200;
+    filter: brightness(1.5);
+  }
+  100% {
+    text-shadow: 0 0 15px #ff4500, 0 0 25px #ff6347, 0 0 35px #ff0000;
+    filter: brightness(1.3);
+  }
+}
+
+.fire-text {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff4500;
+  animation: fireGlow 1s infinite alternate;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to bottom, #ff8c00, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Improved Flame Animation */
+.flame-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+}
+
+@keyframes flameMove {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2) rotate(2deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.8) rotate(-2deg);
+    opacity: 0;
+  }
+}
+
+.flame {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background: radial-gradient(circle at 50% 100%, 
+    #ffff00 10%, 
+    #ff8c00 40%, 
+    #ff4500 70%, 
+    transparent 90%);
+  border-radius: 40% 40% 60% 60% / 70% 70% 30% 30%;
+  animation: flameMove 1.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  filter: blur(5px);
+  mix-blend-mode: plus-lighter;
+  opacity: 0;
+}
+
+/* Individual Flame Variations */
+.flame:nth-child(1) {
+  left: 30%;
+  animation-delay: 0.1s;
+  width: 18px;
+  height: 35px;
+}
+.flame:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.3s;
+  height: 45px;
+}
+.flame:nth-child(3) {
+  left: 60%;
+  animation-delay: 0.5s;
+  width: 22px;
+}
+.flame:nth-child(4) {
+  left: 35%;
+  animation-delay: 0.7s;
+  height: 30px;
+}
+.flame:nth-child(5) {
+  left: 55%;
+  animation-delay: 0.9s;
+  width: 25px;
+}
+
+/* Smoke Effect */
+.flame::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 30px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(50,50,50,0.3) 10%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0;
+  animation: smokeRise 2s infinite;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Verse & Event Details */
+.verse {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 2rem; /* Add spacing from fire effect */
+  display: block;
+  clear: both; /* Ensure new line */
+}
+
+.event-details {
+  font-size: 1.2rem;
+  margin-top: 1rem; /* Reduced from 15px for better proportion */
+  color: #ddd;
+  display: block;
+  padding-bottom: 1rem; /* Add breathing space */
+}
+
+.modern-year {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d, #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  padding: 1px 5px;
+  animation: year-glow 2s ease-in-out infinite;
+}
+
+.year-divider {
+  display: inline-block;
+  margin: 0 10px;
+  color: rgba(255,255,255,0.3);
+  animation: divider-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes year-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255,107,107,0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255,107,107,0.6));
+  }
+}
+
+@keyframes divider-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 50%;
+  max-height: 90vh;
+  margin: auto;
+}
+
+/* Adjust modal for mobile devices */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 80%;  /* Increase the width on mobile */
+    max-height: 80vh;  /* Adjust max-height on mobile */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 77%;  /* Further increase width on smaller screens */
+    max-height: 70vh;  /* Adjust max-height for very small screens */
+  }
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff4757;
+  transform: scale(1.2);
+}
+
+/* Add smooth transition */
+.modal-overlay {
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
     </style>
 
 </head>
@@ -109,14 +398,42 @@
       </header><!-- End Header -->
 
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <h1 class="mb-4 pb-0">Y.P.E<br> <span>(Youth Power Explosion)</span><br> (2024)</h1><br>
-      <p class='text-warning'> <u><i>Tagged:</u></i> <h2 class='text-warning'><strong>THY KINGDOM COME<strong> <h6 class='text-white'><b>-- MAT 6:10 --</b></h6> </h2> </p>
-      <p class="mb-4 pb-0">27th - 30th March, Canaanland DCC Headquaters, Osun state, Nigeria.</p>
-    </div>
-  </section><!-- End Hero Section -->
+
+      <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <!-- Typewriter Effect -->
+            <span class="typewriter">Y.P.E</span>
+            <h1 class="mb-4 pb-0">
+              <span>(Youth Power Explosion)</span> <br>
+              <span class="modern-year">20<span class="year-divider">|</span>25</span>
+            </h1>
+    
+            <p class="text-warning"><u><i>Presents:</i></u></p>
+    
+            <!-- Fire Effect on Text -->
+            <div class="fire-container">
+            <h2 class="fire-text">
+                The Supernatural
+                <div class="flame-container">
+                <span class="flame"></span>
+                <span class="flame"></span>
+                <span class="flame"></span>
+                <span class="flame"></span>
+                <span class="flame"></span>
+            </h2>
+          </div>
+          <div class="content-spacing">
+            <h5 class="verse">-- Ephesians 1:17-21 --</h5>
+            <p class="event-details">16th - 19th April, Canaanland DCC Headquarters, Osun State, Nigeria.</p>
+          </div>
+            </div>
+    
+            
+          </div>
+
+    </section>
+
+
   <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -126,21 +443,28 @@
           <div class="col-lg-6">
             <h2>About The Program</h2>
             <p style="font-size:20px;"><u>Featuring:</u></p>
-            <p>MARITAL TALK, DELIVERANCE, IMPARTATION, TALENT HUNT<br>
-           EMPOWERMENT, GAME, SHARE AND CARE, SALVATION <br>
-            ENTERPRENEURSHIP, and lot more.</p>
-
+            <div class="rotating-list">
+              <span class="list-item">MARITAL TALK</span>
+              <span class="list-item">DELIVERANCE</span>
+              <span class="list-item">IMPARTATION</span>
+              <span class="list-item">TALENT HUNT</span>
+              <span class="list-item">EMPOWERMENT</span>
+              <span class="list-item">GAME</span>
+              <span class="list-item">SHARE AND CARE</span>
+              <span class="list-item">SALVATION</span>
+              <span class="list-item">ENTREPRENEURSHIP</span>
+              <span class="list-item">and lot more</span>
+            </div>
           </div>
           <div class="col-lg-3">
             <h3>Where <i class="bi bi-geo"></i></h3>
             <p>CANAANLAND DCC HEADQUATERS:</p>
             <p class="h4">KLM 2, Omifunfun Road, Olode Ile-Ife, Osun State, Nigeria.</p>
-            <p class="text-warning mt-2"><i class='bi bi-lightbulb-fill' style="font-size: 40px;"></i><br> FREE BUS AT ONDO ADEYEMI CAMPUS AND ILE OAU CAMPUS</p>
 
           </div>
           <div class="col-lg-3">
             <h3>When <i class="bi bi-calendar"></i></h3>
-            <p>Wednesday To Saturday<br>27th - 30th March, 2024</p>
+            <p>Wednesday To Saturday<br>16th - 19th April, 2025</p>
           </div>
         </div>
       </div>
@@ -159,7 +483,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/3.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Prophet Dr. Hezekiah Oladeji</a></h3>
+                <h3><a href="#!">Prophet Dr. Hezekiah Oladeji</a></h3>
                 <p>C.A.C Gen. Evang. Nigeria & Overseas</p>
                 <div class="social">
                   <div class="text-white"> CHIEF HOST </div>
@@ -170,9 +494,9 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/5.jpg" alt="Speaker 1" class="img-fluid">
+              <img src="assets/img/speakers/5.jpeg" alt="Speaker 1" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Pastor D.B Osunrayi</a></h3>
+                <h3><a href="#!">Pastor Zachariah Omoboyede</a></h3>
                 <p>CAC CANAANLAND DCC Suprintendent </p>
                 <div class="social">
                 <div class="text-white">  HOST </div>
@@ -183,9 +507,9 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="assets/img/speakers/1.jpg" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/1.jpeg" alt="Speaker 6" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Prophet Akinola Fasawe</a></h3>
+                <h3><a href="#!">Prophet Akinola Fasawe</a></h3>
                 <p>GUEST</p>
                 <div class="social">
                 </div>
@@ -195,9 +519,9 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="assets/img/speakers/8.jpg" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/speakers/8.jpeg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Lady/Evangelist Esther Oladeji</a></h3>
+                <h3><a href="#!">Lady/Evangelist Esther Oladeji</a></h3>
                 <p>Mummy G.O</p>
                 <div class="social">
                   <div class="text-white"></div>
@@ -211,7 +535,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/9.jpg" alt="Speaker 6" class="img-fluid">
               <div class="details">
-                <h3><a href="#">pastor Mayowa Ojo</a></h3>
+                <h3><a href="#!">pastor Mayowa Ojo</a></h3>
                 <p>DCC YOUTH PASTOR</p>
                 <div class="social">
                 </div>
@@ -224,7 +548,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/2.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Pastor Gideon</a></h3>
+                <h3><a href="#!">Pastor Gideon</a></h3>
                 <p>English Assembly Pastor</p>
                 <div class="social">
                   <div class="text-white">  </div>
@@ -237,9 +561,9 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
-              <img src="assets/img/speakers/4.jpg" alt="Speaker 6" class="img-fluid">
+              <img src="assets/img/speakers/4.jpeg" alt="Speaker 6" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Shade Taiwo</a></h3>
+                <h3><a href="#!">Shade Taiwo</a></h3>
                 <p>GUEST</p>
                 <div class="social">
                 </div>
@@ -251,7 +575,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/6.jpg" height="50" alt="Speaker 6" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Tope Olotokun</a></h3>
+                <h3><a href="#!">Tope Olotokun</a></h3>
                 <p>GUEST</p>
                 <div class="social">
                 </div>
@@ -263,7 +587,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/10.jpg" height="50" alt="Speaker 6" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Minister Oluwatimilehin Emmanuel </a></h3>
+                <h3><a href="#!">Minister Oluwatimilehin Emmanuel </a></h3>
                 <p>DCC YOUTH COORDINATOTR</p>
                 <div class="social">
                 </div>
@@ -274,7 +598,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/8.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Pastor Paul Olalekan</a></h3>
+                <h3><a href="#!">Pastor Paul Olalekan</a></h3>
                 <p>GUEST PASTOR</p>
                 <div class="social">
                   <div class="text-white">  </div>
@@ -286,7 +610,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/11.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Evangelist Busayo Emmanuel</a></h3>
+                <h3><a href="#!">Evangelist Busayo Emmanuel</a></h3>
                 <p>DCC YOUTH CHOIR COORDINATOR</p>
                 <div class="social">
                   <div class="text-white">  </div>
@@ -298,7 +622,7 @@
             <div class="speaker" data-aos="fade-up" data-aos-delay="300">
               <img src="assets/img/speakers/7.jpg" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="#">Bro Ogunwale Seye</a></h3>
+                <h3><a href="#!">Bro Ogunwale Seye</a></h3>
                 <p>PROTOCOL AND DATA OFFICER</p>
                 <div class="social">
                   <div class="text-white">  </div>
@@ -308,9 +632,73 @@
           </div>
 
         </div>
+        <br>
+        <center>
+          <a href="speaker-list.html" style="text-decoration: none;" class="speaker-button">-- View All Guests -- </a>
+        </center>
+        
       </div>
 
-    </section><!-- End Speakers Section -->
+    </section>
+
+    
+<div class="product-grid">
+  <!-- Product Card 1 -->
+  <article class="product-card">
+    <div class="product-image">
+      <img src="assets/img/blackF.jpeg" class="main-img" alt="cloth">
+      <img src="assets/img/blackB.jpeg" class="hover-img" alt="cloth">
+    </div>
+    <div class="product-content">
+      <h3 class="product-title">Camp cloth</h3>
+      <div class="price-container">
+        <span class="current-price">₦179.00</span>
+      </div>
+      <a href="" class="add-to-cart">
+        Purchase now
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+  </article>
+
+  <!-- Product Card 2 -->
+  <article class="product-card">
+    <div class="product-image">
+      <img src="assets/img/blueF.jpeg" class="main-img" alt="cloth">
+      <img src="assets/img/blueB.jpeg" class="hover-img" alt="cloth">
+    </div>
+    <div class="product-content">
+      <h3 class="product-title">Camp cloth</h3>
+      <div class="price-container">
+        <span class="current-price">₦179.00</span>
+      </div>
+      <a href="" class="add-to-cart">
+          Purchase now
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      
+    </div>
+  </article>
+
+  <!-- Product Card 3 -->
+  <article class="product-card">
+      <div class="product-image">
+        <img src="assets/img/whiteF.jpeg" class="main-img" alt="cloth">
+        <img src="assets/img/whiteB.jpeg" class="hover-img" alt="cloth">
+      </div>
+      <div class="product-content">
+        <h3 class="product-title">Camp cloth</h3>
+        <div class="price-container">
+          <span class="current-price">₦179.00</span>
+        </div>
+        <a href="" class="add-to-cart">
+          Purchase now
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        
+      </div>
+    </article>
+</div>
 
 
     <section id="schedule" class="section-with-bg">
@@ -341,86 +729,123 @@
 
             
                 <div class="row schedule-item">
-              <div class="col-md-4 col-4"><time>TIME</time></div>
-              <div class="col-md-8 col-8">
-                <h4>ACTIVITIES </h4>
-              </div>
-              <div class="col-md-4 col-4 mt-2"><time>11:00am - 4:00pm</time></div>
-              <div class="col-md-8 col-8 mt-2">
-                <h4>Arrival, Registration, collection of Tags </h4>
-              </div>
-              <center><u><p class="text-danger">OPENING SESSION</p></u></center>
 
-              <div class="col-md-4 col-4 mt-3"><time>4:00pm - 4:10pm</time></div>
-              <div class="col-md-8 col-8 mt-3">
-                <h4>Opening Prayer </h4>
-              </div>
-
-              <div class="col-md-4 col-4"><time>4:20pm - 5:00pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Praise and Worship </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>5:00pm - 5:10pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Opening Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a> </h4> 
-              </div>
-              <div class="col-md-4 col-4"><time>5:10pm - 5:25pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Introduction </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>5:25pm - 5:40pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Welcome Speech </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>5:40pm - 5:50pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Life during camp </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>5:50pm - 6:10pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Conference choir welcome anthem  </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>6:10pm - 6:25pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>District presentation 1 (Olode District) </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>6:25pm - 7:25pm</time></div>
-              <div class="col-md-8 col-8">
-                <div class="speaker">
-                  <img src="assets/img/speakers/2.jpg" alt="Hubert Hirthe">
-                </div>
-                <h4>First lecture by Pastor Gideon  </h4>
-                <h5>Bible Verse : --------</h5>
-              </div>
-              <div class="col-md-4 col-4"><time>7:25pm - 8:10pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Revival Hour and Impactation Prayer </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>8:10pm - 8:40pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Guest Artist: Minister JOSH </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>8:40pm - 8:55pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Announcement </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>8:55pm - 9:00pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Benediction </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>9:00pm - 11:00pm</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Supper </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>11:00pm - 5:00am</time></div>
-              <div class="col-md-8 col-8">
-                <h4>Light out and bed rest </h4>
-              </div>
-              <div class="col-md-4 col-4"><time>Note: </time></div>
-              <div class="col-md-8 col-8">
-                <h4> </h4>
-                <p class="text-danger">NO GROUP PRAYER</p>
-              </div>
+                  <div class="container mt-4">
+                    <table class="table table-bordered table-hover">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>S/N</th>
+                          <th>Programmes</th>
+                          <th>Time</th>
+                          <th>Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Arrival and Registration</td>
+                          <td>11:00am – 4:00pm</td>
+                          <td>5hrs</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Opening Session</td>
+                          <td>4:00pm – 9:00pm</td>
+                          <td>5hrs</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Opening Prayer</td>
+                          <td>4:00pm – 4:10pm</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Declaring the Conference Open (DCC. Supt. Pastor Z. Omoboyede)</td>
+                          <td>4:10pm – 4:20pm</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Altar of Praise (Appreciating God’s Faithfulness)</td>
+                          <td>4:20pm – 5:00pm</td>
+                          <td>40mins</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Opening Hymn</td>
+                          <td>5:00pm – 5:10pm</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Introduction</td>
+                          <td>5:10pm – 5:25pm</td>
+                          <td>15mins</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Welcome Speech (DCC. Youth Coord.)</td>
+                          <td>5:25pm – 5:40pm</td>
+                          <td>15mins</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>Life During Camp (DCC. Youth Secretary)</td>
+                          <td>5:40pm – 6:00pm</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Welcome Anthem (Conference Choir)</td>
+                          <td>6:00pm - 6:20pm</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>Gospel Artist (Jumoke Praise)</td>
+                          <td>6:20pm – 6:40pm</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td>Lecture I (Pastor Gideon Akinyoade)</td>
+                          <td>6:40pm – 8:10pm</td>
+                          <td>1hr 30mins</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>Guest Artist (Minister Josh)</td>
+                          <td>8:10pm – 8:40pm</td>
+                          <td>30mins</td>
+                        </tr>
+                        <tr>
+                          <td>14</td>
+                          <td>Announcement</td>
+                          <td>8:40pm – 8:55pm</td>
+                          <td>15mins</td>
+                        </tr>
+                        <tr>
+                          <td>15</td>
+                          <td>Benediction</td>
+                          <td>8:55pm – 9:00pm</td>
+                          <td>5mins</td>
+                        </tr>
+                        <tr>
+                          <td>16</td>
+                          <td>Supper</td>
+                          <td>9:00pm - 11:00pm</td>
+                          <td>2hrs</td>
+                        </tr>
+                        <tr>
+                          <td>17</td>
+                          <td>Light Out and Bed Rest (No group prayer, no disturbance)</td>
+                          <td>11:00pm – 5:00am</td>
+                          <td>6hrs</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </div>
           </div>
          
@@ -428,164 +853,59 @@
           <!-- Schdule Day 2 -->
           <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
             <div class="row schedule-item">
-            <div class="col-md-4 col-4"><time>TIME</time></div>
-            <div class="col-md-8 col-8">
-              <h4>ACTIVITIES </h4>
-            </div>
-            <div class="col-md-4 col-4 mt-2"><time>5:30am - 7:00am</time></div>
-            <div class="col-md-8 col-8 mt-2">
-              <h4>Early Morning Session </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>5:30am - 5:40am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Opening Prayer </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>5:40am - 6:00am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Praise and Worship </h4>
-            </div>
-             <center><u><p class="text-danger">Daily Morning Devotion</p></u></center>
-            <div class="col-md-4 col-4 mt-3"><time>6:00am - 6:45am</time></div>
-              <div class="col-md-8 col-8 mt-3">
-              <h4>Morning Lecture from living water </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>6:45am - 6:55am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Prayer </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>6:55am - 7:00am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Announcement </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>7:00am - 9:00am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Personal Hygiene </h4>
-            </div>
-            <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
-            <div class="col-md-8 col-8">
-              <h4 class="text-danger">Division of District for general cleaning, there shall be inspection to our rooms </h4>
-            </div>
-            <center><u><p class="text-danger">Morning Session</p></u></center>
-            <div class="col-md-4 col-4 mt-3"><time>9:00am - 9:10am</time></div>
-              <div class="col-md-8 col-8 mt-3">
-              <h4>Opening Prayer </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>9:10am - 9:30am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Praise and Worship </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>9:30am - 9:40am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
-            </div>
-            <div class="col-md-4 col-4"><time>9:40am - 10:20am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Share and Care </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>10:20am - 11:20am</time></div>
-            <div class="col-md-8 col-8">
-              <div class="speaker">
-                <img src="assets/img/speakers/5.jpg" alt="Hubert Hirthe">
-              </div>
-              <h4>Lecture 2 by DCC Chairman </h4>
-              <h5>Pastor D.B Osunrayi</h5>
-            </div>
-            <div class="col-md-4 col-4"><time>11:20am - 11:50am</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Prayer (Impactation) </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>11:50am - 12:05pm</time></div>
-            <div class="col-md-8 col-8">
-              <h4>District Presentation 2 (Maya Lagos) </h4>
-            </div>
-            <div class="col-md-4 col-4"><time>12:05pm - 12:55pm</time></div>
-            <div class="col-md-8 col-8">
-              <div class="speaker">
-                <img src="assets/img/speakers/6.jpg" alt="Hubert Hirthe">
-              </div>
-              <h4>Ministration by Gospel Artist: </h4>
-              <h5>Tope Olotokun</h5>
-            </div>
-            <div class="col-md-4 col-4"><time>12:55pm - 1:00pm</time></div>
-            <div class="col-md-8 col-8">
-              <h4>Announcement and Benediction </h4>
-            </div>
-            <div class="col-md-4 col-4"><time class="text-danger">1:00pm - 3:00pm</time></div>
-            <div class="col-md-8 col-8">
-              <h4 class="text-danger">BREAK </h4>
-            </div>
-            <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
-            <div class="col-md-8 col-8">
-              <h4 class="text-danger">GAMES (Indoor & Outdoor) and Medical Check up e.t.c </h4>
-            </div>
-            <center><u><p class="text-danger">Afternoon session</p></u></center>
-            <div class="col-md-4 col-4 mt-3"><time>3:30pm - 3:50pm</time></div>
-              <div class="col-md-8 col-8 mt-3">
-              <h4>Praise and Worship </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>3:50pm - 4:00pm</time></div>
-            <div class="col-md-8 col-8">
-            <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a> </h4>
-          </div>
-          <div class="col-md-4 col-4 "><time>4:00pm - 4:15pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>District Presentation 3 (igbando District) </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>4:15pm - 5:20pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>ENTERPRENEURSHIP LECTURE </h4>
-              <h5>Empowerment HOST: Mr. Pelumi</h5>
-            </div>
-            <div class="col-md-4 col-4 "><time>5:20pm - 7:50pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Lecture 3 </h4>
-              <h5>Ministration by invited minister</h5>
-            </div>
-            <div class="col-md-4 col-4 "><time>7:50pm - 8:00pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Announcement and Benediction </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time class="text-danger">8:00pm - 9:00pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4 class="text=danger">BREAK </h4>
-            </div>
-            <center><u><p class="text-danger">Evening session</p></u></center>
-            <div class="col-md-4 col-4 mt-3"><time>9:00pm - 9:10pm</time></div>
-              <div class="col-md-8 col-8 mt-3">
-              <h4>Opening Prayer </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>9:10pm - 9:30pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Praise and Worship </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>9:30pm - 10:00pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>District Presentation 4 (Akobo and Akure1) </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>10:00pm - 11:00pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Talent Hurt </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>11:00pm - 11:30pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Revival and Impactation Hour </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time>11:30pm - 12:30pm</time></div>
-              <div class="col-md-8 col-8">
-                <div class="speaker">
-                  <img src="assets/img/speakers/6.jpg" alt="Hubert Hirthe">
-                </div>
-              <h4>Ministration by invited minister </h4>
-              <h5>Evangelist Olotokun</h5>
-            </div>
-            <div class="col-md-4 col-4 "><time>12:30pm - 12:40pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4>Announcement and Benediction </h4>
-            </div>
-            <div class="col-md-4 col-4 "><time class="text-danger">12:40pm - 5:30pm</time></div>
-              <div class="col-md-8 col-8">
-              <h4 class="text-danger">BREAK </h4>
-            </div>
+              <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                  <tr>
+                    <th>S/N</th>
+                    <th>Programmes</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Morning Devotion</td><td>5:30am – 7:00am</td><td>1hr 30mins</td></tr>
+                  <tr><td>2</td><td>Opening Prayer</td><td>5:30am - 5:40am</td><td>10mins</td></tr>
+                  <tr><td>3</td><td>Praise and Worship</td><td>5:40am – 6:00am</td><td>20mins</td></tr>
+                  <tr><td>4</td><td>Morning Lecture from CAC Living Water (Evang. Philip)</td><td>6:00am – 6:45am</td><td>45mins</td></tr>
+                  <tr><td>5</td><td>Prayer</td><td>6:45am – 6:55am</td><td>10mins</td></tr>
+                  <tr><td>6</td><td>Announcement</td><td>6:55am – 7:00am</td><td>5mins</td></tr>
+                  <tr><td>7</td><td>Personal Hygiene</td><td>7:00am – 9:00am</td><td>2hrs</td></tr>
+                  <tr>
+                    <td colspan="4" class="text-center"><strong>Morning Session</strong> 9am:00am - 1:00pm 4hrs</td>
+                  </tr>
+                  <tr><td>8</td><td>Opening Prayer</td><td>9:00am – 9:10am</td><td>10mins</td></tr>
+                  <tr><td>9</td><td>Praise & Worship</td><td>9:10am – 9:30am</td><td>20mins</td></tr>
+                  <tr><td>10</td><td>Power Prayer (DCC. Superintendent)</td><td>9:30am – 10:00am</td><td>30mins</td></tr>
+                  <tr><td>11</td><td>Share and Care</td><td>10:00am – 10:45am</td><td>45mins</td></tr>
+                  <tr><td>12</td><td>Question and Answer</td><td>10:45am – 11:00am</td><td>15mins</td></tr>
+                  <tr><td>13</td><td>Ultimate Twins</td><td>11:00am – 11:30am</td><td>30mins</td></tr>
+                  <tr><td>14</td><td>Marriage Seminar (Mummy Esther Oladeji)</td><td>11:30am – 12:15pm</td><td>45mins</td></tr>
+                  <tr><td>15</td><td>Question and Answer</td><td>12:15pm – 12:30pm</td><td>15mins</td></tr>
+                  <tr><td>16</td><td>Prayer Session (Prophetess Deborah Omoboyede)</td><td>12:30pm – 12:55pm</td><td>25mins</td></tr>
+                  <tr><td>17</td><td>Announcement and Benediction</td><td>12:55pm – 1:00pm</td><td>5mins</td></tr>
+                  <tr><td>18</td><td>Break</td><td>1:00pm – 3:00pm</td><td>2hrs</td></tr>
+                  <tr>
+                    <td colspan="4" class="text-center"><strong>Afternoon Session</strong> 3am:00pm - 6:15pm 3hrs 15mins</td>
+                  </tr>
+                  <tr><td>19</td><td>Praise and Worship</td><td>3:00pm – 3:20pm</td><td>20mins</td></tr>
+                  <tr><td>20</td><td>Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td><td>3:20pm – 3:30pm</td><td>10mins</td></tr>
+                  <tr><td>21</td><td>Guest Artist (Min Tolu Praise)</td><td>3:30pm – 4:00pm</td><td>30mins</td></tr>
+                  <tr><td>22</td><td>Lecture 2 - Evang Femi Adebile (Fejosbaba)</td><td>4:00pm – 5:00pm</td><td>1hr</td></tr>
+                  <tr><td>23</td><td>Choir Ministration</td><td>5:00pm – 5:15pm</td><td>15mins</td></tr>
+                  <tr><td>24</td><td>Health Talk (Dr. Omotosho)</td><td>5:15pm – 5:55pm</td><td>40mins</td></tr>
+                  <tr><td>25</td><td>Question & Answer</td><td>5:55pm – 6:10pm</td><td>15mins</td></tr>
+                  <tr><td>26</td><td>Announcement & Benediction</td><td>6:10pm – 6:15pm</td><td>5mins</td></tr>
+                  <tr>
+                    <td colspan="4" class="text-center"><strong>Evening Session</strong> 8pm:30pm - 12:00am 4hrs 30mins</td>
+                  </tr>
+                  <tr><td>27</td><td>Praise & Worship</td><td>8:30pm – 8:50pm</td><td>20mins</td></tr>
+                  <tr><td>28</td><td>Quiz Competition</td><td>8:50pm – 10:00pm</td><td>1hr 10mins</td></tr>
+                  <tr><td>29</td><td>Prophetic Ministration (Prophet Opeyemi Solomon)</td><td>10:00pm – 11:00pm</td><td>1hr</td></tr>
+                  <tr><td>30</td><td>Guest Artist [Evang. (Mrs.) Shade Taiwo]</td><td>11:00pm – 11:45pm</td><td>45mins</td></tr>
+                  <tr><td>31</td><td>Offering</td><td>11:45pm – 11:55pm</td><td>10mins</td></tr>
+                  <tr><td>32</td><td>Announcement & Benediction</td><td>11:55pm – 12:00am</td><td>5mins</td></tr>
+                </tbody>
+              </table>
 
           </div>
           </div>
@@ -594,184 +914,251 @@
           <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
             
                 <div class="row schedule-item">
-                  <div class="col-md-4 col-4"><time>TIME</time></div>
-                  <div class="col-md-8 col-8">
-                    <h4>ACTIVITIES </h4>
+                  <div class="container mt-4">
+                    <table class="table table-bordered table-hover">
+                      <thead class="table-dark">
+                        <tr>
+                          <th>S/N</th>
+                          <th>Programmes</th>
+                          <th>Time</th>
+                          <th>Duration</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Morning Session -->
+                        <tr>
+                          <td>1</td>
+                          <td>Morning Devotion</td>
+                          <td>5:30am - 7:10am</td>
+                          <td>1hr 40mins</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Opening Prayer</td>
+                          <td>5:30am - 5:40am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Morning Lecture from CAC Living Water (Evang. L.O Olatunji)</td>
+                          <td>5:40am - 6:10am</td>
+                          <td>30mins</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Prayer</td>
+                          <td>6:10am - 6:20am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Prayer Walk</td>
+                          <td>6:20am - 7:05am</td>
+                          <td>45mins</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Benediction</td>
+                          <td>7:05am - 7:10am</td>
+                          <td>5mins</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Personal Hygiene</td>
+                          <td>7:10am - 9:00am</td>
+                          <td>1hr 15mins</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="text-center"><strong>Morning Session</strong> 9:00am - 1:10pm 4hrs</td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="text-center"><strong>DIVISION OF DISTRICT FOR GENERAL CLEANING. THERE SHALL BE INSPECTION TO OUR ROOMS.</strong></td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="text-center"><strong>N.B: Please obey the directives of all conference officials when they get to your room. Thank you.</strong></td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Praise and Worship</td>
+                          <td>9:00am - 9:20am</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>Congregation Hymn</td>
+                          <td>9:20am - 9:30am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Gospel Artist (Mins. Jesupemi)</td>
+                          <td>9:30am - 10:00am</td>
+                          <td>30mins</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>Music Competition</td>
+                          <td>10:00am - 12:00pm</td>
+                          <td>2hrs</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td>Lecture III (Pastor S.O. Gbuyiro)</td>
+                          <td>12:00pm - 1:00pm</td>
+                          <td>1hr</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>Announcement and Benediction</td>
+                          <td>1:00pm - 1:10pm</td>
+                          <td>10mins</td>
+                        </tr>
+                        
+                        <!-- Afternoon Session -->
+                        <tr>
+                          <td colspan="4" class="text-center"><strong>Afternoon Session</strong> 3:00pm - 7:00pm 4hrs</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Praise & Worship</td>
+                          <td>3:00pm - 3:20pm</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Marital Talk (Pastor Olusola Johnson)</td>
+                          <td>3:20pm - 4:20pm</td>
+                          <td>1hr</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Questions and Answer</td>
+                          <td>4:20pm - 5:10pm</td>
+                          <td>30mins</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Media Talk (Mr. Famoriyo Pelumi)</td>
+                          <td>5:10pm - 5:50pm</td>
+                          <td>40mins</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Question and Answer</td>
+                          <td>5:50pm - 6:00pm</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Impartation Session (Prophet Akinola Fasawe)</td>
+                          <td>6:00pm - 7:00pm</td>
+                          <td>1hr</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Fire Camp</td>
+                          <td>7:00pm - 10:00pm</td>
+                          <td>3hrs</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Break</td>
+                          <td>10:00pm - 12:00am</td>
+                          <td>2hrs</td>
+                        </tr>
+                        
+                        <!-- Vigil Session -->
+                        <tr>
+                          <td colspan="4" class="text-center"><strong>Vigil Session</strong> 12:00am - 5:00am 5hrs</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Opening Prayer</td>
+                          <td>12:00am - 12:10am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Praise & Worship</td>
+                          <td>12:10am - 12:30am</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Hymn</td>
+                          <td>12:30am - 12:40am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Mass Choir</td>
+                          <td>12:40am - 1:00am</td>
+                          <td>20mins</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Prayer Session</td>
+                          <td>1:00am - 1:15am</td>
+                          <td>15mins</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Award Session</td>
+                          <td>1:15am - 1:30am</td>
+                          <td>15mins</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Gospel Artist / Offering (Minister Jesupemi)</td>
+                          <td>1:30am - 2:00am</td>
+                          <td>30mins</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Impartation Session (Pastor Stephen Crown)</td>
+                          <td>2:00am - 3:00am</td>
+                          <td>1hr</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>Gospel Artist (Evang. (Mrs.) Titi Aremu)</td>
+                          <td>3:00am - 3:25am</td>
+                          <td>25mins</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Gospel Artist (Evang. Tope Olutokun)</td>
+                          <td>3:25am - 4:10am</td>
+                          <td>45mins</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>Fatherly Blessings</td>
+                          <td>4:10am - 4:35am</td>
+                          <td>25mins</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td>Closing Remark / Announcement</td>
+                          <td>4:35am - 4:45am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>Closing Hymn</td>
+                          <td>4:45am - 4:55am</td>
+                          <td>10mins</td>
+                        </tr>
+                        <tr>
+                          <td>14</td>
+                          <td>Prayer & Benediction</td>
+                          <td>4:55am - 5:00am</td>
+                          <td>5mins</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <center><u><p class="text-danger">Early Morning Afternoon Session</p></u></center>
-                <div class="col-md-4 col-4 mt-3"><time>5:30am - 5:40am</time></div>
-                  <div class="col-md-8 col-8 mt-3">
-                  <h4>Opening Prayer </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>5:40am - 6:00am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Praise and Worship </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>6:00am - 6:445am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>morning Lecture from CAC devotion Book </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>6:45am - 6:55am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Prayer </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>6:55am - 7:00am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Announcement </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>7:00am - 9:00am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Personal Hygiene </h4>
-                </div>
-                <div class="col-md-4 col-4"><time class="text-danger">Note:</time></div>
-                <div class="col-md-8 col-8">
-                  <h4 class="text-danger">Division of District for general cleaning, there shall be inspection to our rooms </h4>
-                  <p class="text-danger">IT'S VERY IMPORTANT YOU OBEY AND RESPECT ALL CONFERENCE OFFICER WHEN THEY GET TO YOUR ROOM. <br>
-                  Thank you</p>
-                </div>
-                
-                <div class="col-md-4 col-4 "><time>9:00am - 9:20am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Praise and Worship </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>9:20am - 9:30am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Congregational Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>9:30am - 10:00am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>District presentation 5 (Oreofe / Ado District) </h4>
-                </div>
-
-                <div class="col-md-4 col-4 "><time>10:00am - 11:30am</time></div>
-                <div class="col-md-8 col-8">
-                <h4>Lecture on Marriage </h4>
-              </div>
-              <div class="col-md-4 col-4 "><time>11:30am - 12:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Question and Answer </h4>
-                </div>
-
-                <div class="col-md-4 col-4 "><time>12:00pm - 12:40pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Prayer (inpactation and revival hour) </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>12:40pm - 12:50pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Offering </h4>
-                </div>
-                <div class="col-md-4 col-4 "><time>12:50pm - 1:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4> Announcement</h4>
-                </div>
-                <div class="col-md-4 col-4 "><time class="text-center">1:00pm - 3:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4 class="text-danger">REST AND GAME </h4>
-          </div>
-          <center><u><p class="text-danger">Afternoon Session</p></u></center>
-                <div class="col-md-4 col-4 mt-3"><time>3:30pm - 3:20pm</time></div>
-                  <div class="col-md-8 col-8 mt-3">
-                  <h4>Praise and Worship </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>3:20pm - 3:30pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Congregational Hymn  <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
-                </div>
-                <div class="col-md-4 col-4"><time>3:30pm - 4:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>District Presentation (Ore and Akure Lafe District) </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:00pm - 5:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Sister and Brother Forum </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>5:00pm - 5:30pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Question and Answer </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>5:30pm - 6:10pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Ministration Quest Artist: </h4>
-                  <h5>Tolu Praise</h5>
-                </div>
-                <div class="col-md-4 col-4"><time>6:10pm - 7:00pm</time></div>
-                  <div class="col-md-8 col-8">
-                    <div class="speaker">
-                      <img src="assets/img/8.jpg" alt="Hubert Hirthe">
-                    </div>
-                    <h4>Impactation hour(peniel Experience)</h4>
-                  <h4>Pastor Olalekan</h4>
-                </div>
-                <div class="col-md-4 col-4"><time>7:00pm - 7:20pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Worshp Session </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>7:20pm - 7:30pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Announcement and Benediction </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>7:30pm - 11:30pm</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4 class="text-danger">BREAK </h4>
-                </div>
-                <center><u><p class="text-danger">Vigil (Night) Session</p></u></center>
-                <div class="col-md-4 col-4 mt-3"><time>11:30pm - 11:40pm</time></div>
-                  <div class="col-md-8 col-8 mt-3">
-                  <h4>Prayer </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>11:40pm - 12:10am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Praise and Worship </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>12:10am - 12:25am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Conference Choir </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>12:25am - 12:50am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>District Presentation (Abuja District) </h4>
-                </div>
-
-                <div class="col-md-4 col-4"><time>12:50am - 1:20am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Final charge </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>1:20am - 2:20am</time></div>
-                  <div class="col-md-8 col-8">
-                    <div class="speaker">
-                      <img src="assets/img/speakers/4.jpg" alt="Hubert Hirthe">
-                    </div>
-                  <h4>Ministration Gospel Artist: </h4>
-                  <h5>Lady Shade Taiwo </h5>
-                </div>
-                <div class="col-md-4 col-4"><time>2:20am - 3:50am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Fatherly Blessing </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>3:50am - 4:05am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Conference Choir </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:05am - 4:20am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Offering </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:20am - 4:30am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Closing Remark </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:30am - 4:40am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Announcement </h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:40am - 4:50am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Closing Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></h4>
-                </div>
-                <div class="col-md-4 col-4"><time>4:50am - 5:00am</time></div>
-                  <div class="col-md-8 col-8">
-                  <h4>Prayer and Benediction </h4>
-                </div>
+                  
                 
 
           </div>
@@ -790,7 +1177,7 @@
         <div class="row">
      
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car border-0" style="background-image: url('assets/img/3.jpg');">
+              <div class="card car border-0" style="background-image: url('assets/img/3.jpeg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">LIFE IN CONFERENCE</h3>
@@ -811,7 +1198,7 @@
           </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car car border-0" style="background-image: url('assets/img/3.jpg');">
+              <div class="card car car border-0" style="background-image: url('assets/img/3.jpeg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">HYMNS</h3>
@@ -830,7 +1217,7 @@
           </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div class="card car border-0" style="background-image: url('assets/img/3.jpg');">
+              <div class="card car border-0" style="background-image: url('assets/img/3.jpeg');">
                 <div class="overlay1"></div>
                 <div class="card-content car-content">
                   <h3 class="card-title text-warning" style="font-weight: 900;">ATTENDANCE</h3>
@@ -1237,34 +1624,17 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
 
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer>
 
- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
- <div class="modal fade" id="verticalycentered" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background-image: linear-gradient(to right,#2f3344, rgba(255,0,0,1));color:white ">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5><strong style="font-size: 30px; font-weight: 700; color: white;">FREE SHUTTLE <i class="bi bi-truck text-danger"></i></strong></h5>
-        
-          THERE WILL BE FREE BUS AT ONDO ADEYEMI CAMPUS AND ILE OAU CAMPUS
-        </p>
-        <h5><strong style="font-size: 30px; font-weight: 700;color: white;">SPONSOR AND SUPPORT <i class="bi bi-credit-card-fill text-danger"></i></strong></h5>
-        <p>
-          <b><i>To support the program financially</i></b><br>
-              ACCOUNT NAME: CAC Cannaland Youth Convention <br>
-              BAMK NAME: Zenith Bank <br>
-              ACCOUNT NUMBER: <span class="" style="font-size: 18px; font-weight: 600;">1014577243</span> <br>
-         
-        </p>
-      </div>
-      
+  <div class="modal-overlay" id="imageModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="randomImage" class="modal-image" alt="Random Image">
     </div>
   </div>
-</div>
+
+ <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
   <!-- Vendor js Files -->
@@ -1277,15 +1647,48 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/index.js"></script>
-  <scrpt>
-    // Display the modal on page load
-    document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(function() {
-          var myModal = new bootstrap.Modal(document.getElementById('verticalycentered'));
-          myModal.show();
-      }, 5000);
+
+  <script>
+    // Array of image paths (replace with your actual image paths)
+    const images = [
+      'assets/img/l1.jpeg',
+      'assets/img/l2.jpeg',
+      'assets/img/l3.jpeg',
+      'assets/img/l4.jpeg',
+      'assets/img/l5.jpeg',
+      'assets/img/l6.jpeg',
+      'assets/img/l7.jpeg',
+      'assets/img/l8.jpeg'
+    ];
+    
+    // Randomly select an image
+    function showRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const modal = document.getElementById('imageModal');
+      const imgElement = document.getElementById('randomImage');
+      
+      imgElement.src = images[randomIndex];
+      modal.style.display = 'flex';
+    }
+    
+    // Close modal functionality
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      document.getElementById('imageModal').style.display = 'none';
     });
-</script>
+    
+    // Close when clicking outside image
+    window.addEventListener('click', (event) => {
+      const modal = document.getElementById('imageModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    
+    // Show modal when page loads
+    window.addEventListener('load', showRandomImage);
+
+  </script>
+
 
 </body>
 
