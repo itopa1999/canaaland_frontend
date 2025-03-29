@@ -1684,8 +1684,9 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
       }
     });
     
-    // Show modal when page loads
-    window.addEventListener('load', showRandomImage);
+    window.addEventListener('load', () => {
+      setTimeout(showRandomImage, 3000); 
+    });
 
   </script>
 
