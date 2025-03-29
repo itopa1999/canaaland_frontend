@@ -1669,7 +1669,11 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
       
       imgElement.src = images[randomIndex];
       modal.style.display = 'flex';
-    }
+
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 6000); // 6000ms = 6 seconds delay
+  }
     
     // Close modal functionality
     document.querySelector('.close-btn').addEventListener('click', () => {
