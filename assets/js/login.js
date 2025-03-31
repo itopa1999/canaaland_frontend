@@ -8,13 +8,10 @@ document.querySelector('.general-form').addEventListener('submit', function(even
     errorAlert.classList.add('d-none');
     document.getElementById('message').innerText = '';
 
-    // fetch('http://localhost:8000/admins/api/login/', {
-    fetch('http://localhost:8000/admins/api/login/', {
+    // fetch('https://lucky1999.pythonanywhere.com/admins/api/login/', {
+    fetch('https://lucky1999.pythonanywhere.com/admins/api/login/', {
         method: 'POST',
         body: formData,
-        headers: {
-            'X-CSRFToken': '{{ csrf_token }}' // For Django CSRF protection
-        }
     })
     .then(response => {
         if (response.ok) {
@@ -32,7 +29,7 @@ document.querySelector('.general-form').addEventListener('submit', function(even
         else if (response.status === 400) {
             return response.json()
             .then(data => {
-                document.getElementById('message').innerText = data.detail;
+                document.getElementById('message').innerText = data.error;
                 errorAlert.classList.remove('d-none');
                 document.getElementById('spinner').classList.add('d-none');
                 document.getElementById('login-text').classList.remove('d-none');

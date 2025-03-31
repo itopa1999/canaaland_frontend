@@ -10,7 +10,7 @@ if (token == null && token == 'undefined') {
 let currentPage = 1;  // Current page tracker
 let searchQuery = '';  // Default empty search query
 let orderingQuery = '';  // Default empty ordering query
-const baseUrl = 'http://127.0.0.1:8000/admins/api/list/attendance/';
+const baseUrl = 'https://lucky1999.pythonanywhere.com/admins/api/list/attendance/';
 
 async function fetchMembers() {
     const url = `${baseUrl}?page=${currentPage}&search=${searchQuery}&ordering=${orderingQuery}`;
@@ -124,7 +124,7 @@ fetchMembers();
 
     var download = document.getElementById('download');
     download.addEventListener('click', function() {
-        fetch('http://localhost:8000/admins/api/download/attendance/', {
+        fetch('https://lucky1999.pythonanywhere.com/admins/api/download/attendance/', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token

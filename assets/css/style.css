@@ -833,13 +833,14 @@ h6 {
 
 .rotating-list {
   position: relative;
+  margin-bottom: 100px;
 }
 
 .list-item {
   position: absolute;
   opacity: 0;
   animation: rotateList 18s infinite linear;
-  font-size: inherit;
+  
 }
 
 @keyframes rotateList {

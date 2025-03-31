@@ -23,7 +23,7 @@ function debounce(func, wait) {
 const debouncedFetchMembers = debounce(fetchMembers, 300);
 
 async function fetchMembers() {
-    const url = new URL('http://127.0.0.1:8000/admins/api/list/member/');
+    const url = new URL('https://lucky1999.pythonanywhere.com/admins/api/list/member/');
     url.searchParams.append('page', currentPage);
     if (searchQuery) url.searchParams.append('search', searchQuery);
     if (orderingQuery) url.searchParams.append('ordering', orderingQuery);
@@ -135,7 +135,7 @@ fetchMembers();
 
     var download = document.getElementById('download');
     download.addEventListener('click', function() {
-        fetch('http://localhost:8000/admins/api/download/member/', {
+        fetch('https://lucky1999.pythonanywhere.com/admins/api/download/member/', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token

@@ -7,12 +7,12 @@ if (token == null && token == 'undefined') {
     document.getElementById('message').innerText = 'Token is invalid login again';
     errorAlert.classList.remove('d-none');
 }
-// fetch('http://localhost:8000/admins/api/list/school/application/', {
+// fetch('https://lucky1999.pythonanywhere.com/admins/api/list/school/application/', {
 let nextPageUrl = null;  // Global variable to store next page URL
 let previousPageUrl = null;  // Global variable to store previous page URL
 
 // Initial data fetching
-fetch('http://localhost:8000/admins/api/list/question/', {
+fetch('https://lucky1999.pythonanywhere.com/admins/api/list/question/', {
     method: 'GET',
     headers: {
         'Authorization': 'Bearer ' + token

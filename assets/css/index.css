@@ -1,0 +1,328 @@
+.btn1{
+    background-color:#f82249;
+    padding:15px;
+    color:white;
+    border:2px solid #f82249;
+    border-radius:5px;
+  }
+      .modal-content {
+          border-radius: 0;
+      }
+.car {
+position: relative;
+height: 300px; /* Set your desired fixed height */
+background-size: cover;
+background-position: center;
+
+}
+
+
+
+.car-content {
+position: absolute;
+left: 10px;
+top: 50%;
+transform: translateY(-50%);
+color: white;
+
+
+}
+.car p {
+font-size:13px;
+}
+.overlay1 {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.849);
+transition: opacity 0.3s ease;
+border-radius: 5px;
+}
+
+.typewriter {
+overflow: hidden;
+white-space: nowrap;
+letter-spacing: 3px;
+animation: typing 3s steps(5) forwards;
+width: 0;
+color: #ffd93d;
+display: inline-block;
+transition: all 0.3s ease;
+text-shadow: 0 2px 8px rgba(255,107,107,0.2);
+font-size: xx-large;
+font-weight: 900;
+}
+
+@keyframes typing {
+to { width: 5.5ch; } /* 5 characters in "Y.P.E" (1ch ≈ 1 character width) */
+}
+
+h1 span {
+font-size: 1.8rem;
+display: block;
+font-style: italic;
+color: #ffcc00;
+}
+
+/* Fire Text Container */
+.fire-container {
+position: relative;
+display: inline-block;
+padding: 20px;
+}
+
+/* Enhanced Text Animation */
+@keyframes fireGlow {
+0% {
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff8c00;
+  filter: brightness(1.2);
+}
+50% {
+  text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff4500, 0 0 40px #ff2200;
+  filter: brightness(1.5);
+}
+100% {
+  text-shadow: 0 0 15px #ff4500, 0 0 25px #ff6347, 0 0 35px #ff0000;
+  filter: brightness(1.3);
+}
+}
+
+.fire-text {
+font-size: 3rem;
+font-weight: 900;
+color: #ff4500;
+animation: fireGlow 1s infinite alternate;
+position: relative;
+z-index: 2;
+text-transform: uppercase;
+letter-spacing: 2px;
+background: linear-gradient(to bottom, #ff8c00, #ff4500);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Improved Flame Animation */
+.flame-container {
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+height: 100px;
+pointer-events: none;
+}
+
+@keyframes flameMove {
+0% {
+  transform: translateY(0) scale(1) rotate(0deg);
+  opacity: 1;
+}
+50% {
+  transform: translateY(-30px) scale(1.2) rotate(2deg);
+  opacity: 0.8;
+}
+100% {
+  transform: translateY(-60px) scale(0.8) rotate(-2deg);
+  opacity: 0;
+}
+}
+
+.flame {
+position: absolute;
+width: 20px;
+height: 40px;
+background: radial-gradient(circle at 50% 100%, 
+  #ffff00 10%, 
+  #ff8c00 40%, 
+  #ff4500 70%, 
+  transparent 90%);
+border-radius: 40% 40% 60% 60% / 70% 70% 30% 30%;
+animation: flameMove 1.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+filter: blur(5px);
+mix-blend-mode: plus-lighter;
+opacity: 0;
+}
+
+/* Individual Flame Variations */
+.flame:nth-child(1) {
+left: 30%;
+animation-delay: 0.1s;
+width: 18px;
+height: 35px;
+}
+.flame:nth-child(2) {
+left: 45%;
+animation-delay: 0.3s;
+height: 45px;
+}
+.flame:nth-child(3) {
+left: 60%;
+animation-delay: 0.5s;
+width: 22px;
+}
+.flame:nth-child(4) {
+left: 35%;
+animation-delay: 0.7s;
+height: 30px;
+}
+.flame:nth-child(5) {
+left: 55%;
+animation-delay: 0.9s;
+width: 25px;
+}
+
+/* Smoke Effect */
+.flame::after {
+content: '';
+position: absolute;
+top: 100%;
+width: 30px;
+height: 50px;
+background: radial-gradient(circle, rgba(50,50,50,0.3) 10%, transparent 70%);
+filter: blur(10px);
+opacity: 0;
+animation: smokeRise 2s infinite;
+}
+
+@keyframes smokeRise {
+0% {
+  transform: translateY(0) scale(0.8);
+  opacity: 0.3;
+}
+100% {
+  transform: translateY(-100px) scale(1.5);
+  opacity: 0;
+}
+}
+
+/* Verse & Event Details */
+.verse {
+font-size: 1rem;
+font-weight: bold;
+color: #fff;
+margin-top: 2rem; /* Add spacing from fire effect */
+display: block;
+clear: both; /* Ensure new line */
+}
+
+.event-details {
+font-size: 1.2rem;
+margin-top: 1rem; /* Reduced from 15px for better proportion */
+color: #ddd;
+display: block;
+padding-bottom: 1rem; /* Add breathing space */
+}
+
+.modern-year {
+display: inline-block;
+font-size: 2.5rem;
+font-weight: 700;
+color: transparent;
+background: linear-gradient(45deg, #ff6b6b, #ffd93d, #ff6b6b);
+-webkit-background-clip: text;
+background-clip: text;
+position: relative;
+padding: 1px 5px;
+animation: year-glow 2s ease-in-out infinite;
+}
+
+.year-divider {
+display: inline-block;
+margin: 0 10px;
+color: rgba(255,255,255,0.3);
+animation: divider-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes year-glow {
+0%, 100% {
+  filter: drop-shadow(0 0 5px rgba(255,107,107,0.3));
+}
+50% {
+  filter: drop-shadow(0 0 15px rgba(255,107,107,0.6));
+}
+}
+
+@keyframes divider-pulse {
+0%, 100% {
+  opacity: 0.3;
+  transform: scale(1);
+}
+50% {
+  opacity: 1;
+  transform: scale(1.2);
+}
+}
+
+
+
+
+.modal-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+align-items: center;
+justify-content: center;
+z-index: 1000;
+}
+
+.banner-update {
+position: relative;
+max-width: 50%;
+max-height: 90vh;
+margin: auto;
+}
+
+/* Adjust modal for mobile devices */
+@media (max-width: 768px) {
+.banner-update {
+  max-width: 80%;  /* Increase the width on mobile */
+  max-height: 80vh;  /* Adjust max-height on mobile */
+}
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+.banner-update {
+  max-width: 77%;  /* Further increase width on smaller screens */
+  max-height: 70vh;  /* Adjust max-height for very small screens */
+}
+}
+
+.modal-image {
+max-width: 100%;
+max-height: 80vh;
+border-radius: 8px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+position: absolute;
+top: -35px;
+right: -35px;
+color: white;
+font-size: 35px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.close-btn:hover {
+color: #ff4757;
+transform: scale(1.2);
+}
+
+/* Add smooth transition */
+.modal-overlay {
+animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}

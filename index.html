@@ -20,341 +20,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/cloth.css" rel="stylesheet">
+  <link href="assets/css/index.css" rel="stylesheet">
+  
+
   <style>
-    .btn1{
-      background-color:#f82249;
-      padding:15px;
-      color:white;
-      border:2px solid #f82249;
-      border-radius:5px;
-    }
-        .modal-content {
-            border-radius: 0;
-        }
-.car {
-  position: relative;
-  height: 300px; /* Set your desired fixed height */
-  background-size: cover;
-  background-position: center;
-
-}
-
-
-
-.car-content {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  
-  
-}
-.car p {
-  font-size:13px;
-}
-.overlay1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.849);
-  transition: opacity 0.3s ease;
-  border-radius: 5px;
-}
-
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  letter-spacing: 3px;
-  animation: typing 3s steps(5) forwards;
-  width: 0;
-  color: #ffd93d;
-  display: inline-block;
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 8px rgba(255,107,107,0.2);
-  font-size: xx-large;
-  font-weight: 900;
-}
-
-@keyframes typing {
-  to { width: 5.5ch; } /* 5 characters in "Y.P.E" (1ch ≈ 1 character width) */
-}
-
-h1 span {
-  font-size: 1.8rem;
-  display: block;
-  font-style: italic;
-  color: #ffcc00;
-}
-
-/* Fire Text Container */
-.fire-container {
-  position: relative;
-  display: inline-block;
-  padding: 20px;
-}
-
-/* Enhanced Text Animation */
-@keyframes fireGlow {
-  0% {
-    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff8c00;
-    filter: brightness(1.2);
-  }
-  50% {
-    text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff4500, 0 0 40px #ff2200;
-    filter: brightness(1.5);
-  }
-  100% {
-    text-shadow: 0 0 15px #ff4500, 0 0 25px #ff6347, 0 0 35px #ff0000;
-    filter: brightness(1.3);
-  }
-}
-
-.fire-text {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #ff4500;
-  animation: fireGlow 1s infinite alternate;
-  position: relative;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(to bottom, #ff8c00, #ff4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Improved Flame Animation */
-.flame-container {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100px;
-  pointer-events: none;
-}
-
-@keyframes flameMove {
-  0% {
-    transform: translateY(0) scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-30px) scale(1.2) rotate(2deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-60px) scale(0.8) rotate(-2deg);
-    opacity: 0;
-  }
-}
-
-.flame {
-  position: absolute;
-  width: 20px;
-  height: 40px;
-  background: radial-gradient(circle at 50% 100%, 
-    #ffff00 10%, 
-    #ff8c00 40%, 
-    #ff4500 70%, 
-    transparent 90%);
-  border-radius: 40% 40% 60% 60% / 70% 70% 30% 30%;
-  animation: flameMove 1.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
-  filter: blur(5px);
-  mix-blend-mode: plus-lighter;
-  opacity: 0;
-}
-
-/* Individual Flame Variations */
-.flame:nth-child(1) {
-  left: 30%;
-  animation-delay: 0.1s;
-  width: 18px;
-  height: 35px;
-}
-.flame:nth-child(2) {
-  left: 45%;
-  animation-delay: 0.3s;
-  height: 45px;
-}
-.flame:nth-child(3) {
-  left: 60%;
-  animation-delay: 0.5s;
-  width: 22px;
-}
-.flame:nth-child(4) {
-  left: 35%;
-  animation-delay: 0.7s;
-  height: 30px;
-}
-.flame:nth-child(5) {
-  left: 55%;
-  animation-delay: 0.9s;
-  width: 25px;
-}
-
-/* Smoke Effect */
-.flame::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  width: 30px;
-  height: 50px;
-  background: radial-gradient(circle, rgba(50,50,50,0.3) 10%, transparent 70%);
-  filter: blur(10px);
-  opacity: 0;
-  animation: smokeRise 2s infinite;
-}
-
-@keyframes smokeRise {
-  0% {
-    transform: translateY(0) scale(0.8);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-100px) scale(1.5);
-    opacity: 0;
-  }
-}
-
-/* Verse & Event Details */
-.verse {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 2rem; /* Add spacing from fire effect */
-  display: block;
-  clear: both; /* Ensure new line */
-}
-
-.event-details {
-  font-size: 1.2rem;
-  margin-top: 1rem; /* Reduced from 15px for better proportion */
-  color: #ddd;
-  display: block;
-  padding-bottom: 1rem; /* Add breathing space */
-}
-
-.modern-year {
-  display: inline-block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: transparent;
-  background: linear-gradient(45deg, #ff6b6b, #ffd93d, #ff6b6b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  position: relative;
-  padding: 1px 5px;
-  animation: year-glow 2s ease-in-out infinite;
-}
-
-.year-divider {
-  display: inline-block;
-  margin: 0 10px;
-  color: rgba(255,255,255,0.3);
-  animation: divider-pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes year-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 5px rgba(255,107,107,0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 15px rgba(255,107,107,0.6));
-  }
-}
-
-@keyframes divider-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-
-
-
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 50%;
-  max-height: 90vh;
-  margin: auto;
-}
-
-/* Adjust modal for mobile devices */
-@media (max-width: 768px) {
-  .modal-content {
-    max-width: 80%;  /* Increase the width on mobile */
-    max-height: 80vh;  /* Adjust max-height on mobile */
-  }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-  .modal-content {
-    max-width: 77%;  /* Further increase width on smaller screens */
-    max-height: 70vh;  /* Adjust max-height for very small screens */
-  }
-}
-
-.modal-image {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.close-btn {
-  position: absolute;
-  top: -35px;
-  right: -35px;
-  color: white;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.close-btn:hover {
-  color: #ff4757;
-  transform: scale(1.2);
-}
-
-/* Add smooth transition */
-.modal-overlay {
-  animation: modalFadeIn 0.3s;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+    
 
     </style>
 
@@ -420,8 +95,9 @@ h1 span {
                 <span class="flame"></span>
                 <span class="flame"></span>
                 <span class="flame"></span>
+              </div>
             </h2>
-          </div>
+          
           <div class="content-spacing">
             <h5 class="verse">-- Ephesians 1:17-21 --</h5>
             <p class="event-details">16th - 19th April, Canaanland DCC Headquarters, Osun State, Nigeria.</p>
@@ -440,7 +116,7 @@ h1 span {
     <section id="about">
       <div class="container" data-aos="fade-up">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 about-list">
             <h2>About The Program</h2>
             <p style="font-size:20px;"><u>Featuring:</u></p>
             <div class="rotating-list">
@@ -654,7 +330,7 @@ h1 span {
       <div class="price-container">
         <span class="current-price">₦179.00</span>
       </div>
-      <a href="" class="add-to-cart">
+      <a href="https://wa.me/2348149422101?text=Hello%20Sis%20Esther,%20I%20need%20the%20black%20crested%20vest!" class="add-to-cart">
         Purchase now
           <i class="fas fa-shopping-cart"></i>
         </a>
@@ -672,8 +348,8 @@ h1 span {
       <div class="price-container">
         <span class="current-price">₦179.00</span>
       </div>
-      <a href="" class="add-to-cart">
-          Purchase now
+      <a href="https://wa.me/2348149422101?text=Hello%20Sis%20Esther,%20I%20need%20the%20blue%20crested%20vest!" class="add-to-cart">
+        Purchase now
           <i class="fas fa-shopping-cart"></i>
         </a>
       
@@ -691,7 +367,7 @@ h1 span {
         <div class="price-container">
           <span class="current-price">₦179.00</span>
         </div>
-        <a href="" class="add-to-cart">
+        <a href="https://wa.me/2348149422101?text=Hello%20Sis%20Esther,%20I%20need%20the%20white%20crested%20vest!" class="add-to-cart">
           Purchase now
             <i class="fas fa-shopping-cart"></i>
           </a>
@@ -773,7 +449,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>6</td>
-                          <td>Opening Hymn</td>
+                          <td>Opening Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td>
                           <td>5:00pm – 5:10pm</td>
                           <td>10mins</td>
                         </tr>
@@ -803,7 +479,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>11</td>
-                          <td>Gospel Artist (Jumoke Praise)</td>
+                          <td>Gospel Minister (Jumoke Praise)</td>
                           <td>6:20pm – 6:40pm</td>
                           <td>20mins</td>
                         </tr>
@@ -815,7 +491,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>13</td>
-                          <td>Guest Artist (Minister Josh)</td>
+                          <td>Guest Minister (Minister Josh)</td>
                           <td>8:10pm – 8:40pm</td>
                           <td>30mins</td>
                         </tr>
@@ -871,6 +547,12 @@ h1 span {
                   <tr><td>6</td><td>Announcement</td><td>6:55am – 7:00am</td><td>5mins</td></tr>
                   <tr><td>7</td><td>Personal Hygiene</td><td>7:00am – 9:00am</td><td>2hrs</td></tr>
                   <tr>
+                    <td colspan="4" class="text-center"><strong>DIVISION OF DISTRICT FOR GENERAL CLEANING. THERE
+                      SHALL BE INSPECTION TO OUR ROOMS.</strong><br>
+                      N.B: Please obey the directives of all conference officials when they get
+                      to your room. Thank you.</td>
+                  </tr>
+                  <tr>
                     <td colspan="4" class="text-center"><strong>Morning Session</strong> 9am:00am - 1:00pm 4hrs</td>
                   </tr>
                   <tr><td>8</td><td>Opening Prayer</td><td>9:00am – 9:10am</td><td>10mins</td></tr>
@@ -878,7 +560,7 @@ h1 span {
                   <tr><td>10</td><td>Power Prayer (DCC. Superintendent)</td><td>9:30am – 10:00am</td><td>30mins</td></tr>
                   <tr><td>11</td><td>Share and Care</td><td>10:00am – 10:45am</td><td>45mins</td></tr>
                   <tr><td>12</td><td>Question and Answer</td><td>10:45am – 11:00am</td><td>15mins</td></tr>
-                  <tr><td>13</td><td>Ultimate Twins</td><td>11:00am – 11:30am</td><td>30mins</td></tr>
+                  <tr><td>13</td><td>Guest Minister (Ultimate Twins)</td><td>11:00am – 11:30am</td><td>30mins</td></tr>
                   <tr><td>14</td><td>Marriage Seminar (Mummy Esther Oladeji)</td><td>11:30am – 12:15pm</td><td>45mins</td></tr>
                   <tr><td>15</td><td>Question and Answer</td><td>12:15pm – 12:30pm</td><td>15mins</td></tr>
                   <tr><td>16</td><td>Prayer Session (Prophetess Deborah Omoboyede)</td><td>12:30pm – 12:55pm</td><td>25mins</td></tr>
@@ -889,7 +571,7 @@ h1 span {
                   </tr>
                   <tr><td>19</td><td>Praise and Worship</td><td>3:00pm – 3:20pm</td><td>20mins</td></tr>
                   <tr><td>20</td><td>Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td><td>3:20pm – 3:30pm</td><td>10mins</td></tr>
-                  <tr><td>21</td><td>Guest Artist (Min Tolu Praise)</td><td>3:30pm – 4:00pm</td><td>30mins</td></tr>
+                  <tr><td>21</td><td>Guest Minister (Min Tolu Praise)</td><td>3:30pm – 4:00pm</td><td>30mins</td></tr>
                   <tr><td>22</td><td>Lecture 2 - Evang Femi Adebile (Fejosbaba)</td><td>4:00pm – 5:00pm</td><td>1hr</td></tr>
                   <tr><td>23</td><td>Choir Ministration</td><td>5:00pm – 5:15pm</td><td>15mins</td></tr>
                   <tr><td>24</td><td>Health Talk (Dr. Omotosho)</td><td>5:15pm – 5:55pm</td><td>40mins</td></tr>
@@ -901,7 +583,7 @@ h1 span {
                   <tr><td>27</td><td>Praise & Worship</td><td>8:30pm – 8:50pm</td><td>20mins</td></tr>
                   <tr><td>28</td><td>Quiz Competition</td><td>8:50pm – 10:00pm</td><td>1hr 10mins</td></tr>
                   <tr><td>29</td><td>Prophetic Ministration (Prophet Opeyemi Solomon)</td><td>10:00pm – 11:00pm</td><td>1hr</td></tr>
-                  <tr><td>30</td><td>Guest Artist [Evang. (Mrs.) Shade Taiwo]</td><td>11:00pm – 11:45pm</td><td>45mins</td></tr>
+                  <tr><td>30</td><td>Guest Minister [Evang. (Mrs.) Shade Taiwo]</td><td>11:00pm – 11:45pm</td><td>45mins</td></tr>
                   <tr><td>31</td><td>Offering</td><td>11:45pm – 11:55pm</td><td>10mins</td></tr>
                   <tr><td>32</td><td>Announcement & Benediction</td><td>11:55pm – 12:00am</td><td>5mins</td></tr>
                 </tbody>
@@ -985,13 +667,13 @@ h1 span {
                         </tr>
                         <tr>
                           <td>9</td>
-                          <td>Congregation Hymn</td>
+                          <td>Congregation Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td>
                           <td>9:20am - 9:30am</td>
                           <td>10mins</td>
                         </tr>
                         <tr>
                           <td>10</td>
-                          <td>Gospel Artist (Mins. Jesupemi)</td>
+                          <td>Gospel Minister (Mins. Jesupemi)</td>
                           <td>9:30am - 10:00am</td>
                           <td>30mins</td>
                         </tr>
@@ -1085,7 +767,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>3</td>
-                          <td>Hymn</td>
+                          <td>Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td>
                           <td>12:30am - 12:40am</td>
                           <td>10mins</td>
                         </tr>
@@ -1109,7 +791,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>7</td>
-                          <td>Gospel Artist / Offering (Minister Jesupemi)</td>
+                          <td>Gospel Minister / Offering (Minister Jesupemi)</td>
                           <td>1:30am - 2:00am</td>
                           <td>30mins</td>
                         </tr>
@@ -1121,13 +803,13 @@ h1 span {
                         </tr>
                         <tr>
                           <td>9</td>
-                          <td>Gospel Artist (Evang. (Mrs.) Titi Aremu)</td>
+                          <td>Gospel Minister (Evang. (Mrs.) Titi Aremu)</td>
                           <td>3:00am - 3:25am</td>
                           <td>25mins</td>
                         </tr>
                         <tr>
                           <td>10</td>
-                          <td>Gospel Artist (Evang. Tope Olutokun)</td>
+                          <td>Gospel Minister (Evang. Tope Olutokun)</td>
                           <td>3:25am - 4:10am</td>
                           <td>45mins</td>
                         </tr>
@@ -1145,7 +827,7 @@ h1 span {
                         </tr>
                         <tr>
                           <td>13</td>
-                          <td>Closing Hymn</td>
+                          <td>Closing Hymn <a class="btn btn-danger" href="hymns.html">Open Hymns</a></td>
                           <td>4:45am - 4:55am</td>
                           <td>10mins</td>
                         </tr>
@@ -1189,7 +871,7 @@ h1 span {
                   Your cooperation is appreciated.
                   </p>
                     <div>
-                      <a href="rules" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
+                      <a href="rules.html" class="btn-book btn btn-danger animate__animated animate__fadeInUp scrollto">Click Here</a>
                     </div>
                   
                     </div>
@@ -1315,12 +997,6 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="alert alert-danger  container d-none" id="error-alert2">
-                <strong>Error! </strong> <span id="error-message2"></span>
-              </div>
-              <div class="alert alert-success  container d-none" id="success-alert2">
-                <strong>success! </strong> <span id="success-message2"></span>
-              </div>
               <form method="POST" class="register-form" id="registering-form">
                 <div class="form-group">
                   <input type="text" class="" name="name" placeholder="Name" required>
@@ -1378,12 +1054,6 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
             </div>
             
             <div class="modal-body">
-              <div class="alert alert-danger  container d-none" id="error-alert1">
-                <strong>Error! </strong> <span id="error-message1"></span>
-              </div>
-              <div class="alert alert-success  container d-none" id="success-alert1">
-                <strong>success! </strong> <span id="success-message1"></span>
-              </div>
               <form method="POST" class="attendance-form" id="attend-form">
                 <div class="mb-3 mt-3">
                   <select class="select" name='day' required>
@@ -1540,12 +1210,6 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
         </div>
 
         <div class="form">
-          <div class="alert alert-danger  container d-none" id="error-alert">
-            <strong>Error! </strong> <span id="error-message"></span>
-          </div>
-          <div class="alert alert-success  container d-none" id="success-alert">
-            <strong>success! </strong> <span id="success-message"></span>
-          </div>
             <form class="question-form" id="question">
             <div class="row">
               <div class="form-group col-md-6">
@@ -1628,7 +1292,7 @@ Be a part of this glorious YOUTH POWER EXPLOSION program this year, don't miss i
 
 
   <div class="modal-overlay" id="imageModal">
-    <div class="modal-content">
+    <div class="modal-content banner-update">
       <span class="close-btn">&times;</span>
       <img id="randomImage" class="modal-image" alt="Random Image">
     </div>

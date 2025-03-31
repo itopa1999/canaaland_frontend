@@ -6,8 +6,8 @@ if (token == null && token == 'undefined') {
     document.getElementById('message').innerText = 'Token is invalid login again';
     errorAlert.classList.remove('d-none');
 }
-// fetch('http://localhost:8000/admins/api/list/school/application/', {
-fetch('http://localhost:8000/admins/api/admin/dashboard/', {
+// fetch('https://lucky1999.pythonanywhere.com/admins/api/list/school/application/', {
+fetch('https://lucky1999.pythonanywhere.com/admins/api/admin/dashboard/', {
     method: 'GET',
     headers: {
         'Authorization': 'Bearer ' + token
