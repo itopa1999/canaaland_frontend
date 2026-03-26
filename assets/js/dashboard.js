@@ -29,30 +29,51 @@ fetch('https://lucky1999.pythonanywhere.com/admins/api/admin/dashboard/', {
     }
 })
 .then(data => {
-    const dateTimeString = data.year;
-    const year = new Date(dateTimeString).getFullYear();
-    document.getElementById('year').innerText = year;
-    document.getElementById('year1').innerText = year;
-    document.getElementById('year2').innerText = year;
-    document.getElementById('year3').innerText = year;
-    document.getElementById('member_count').innerText = data.member_count;
-    document.getElementById('attend').innerText = data.attend;
-    document.getElementById('question_count').innerText = data.question_count;
-    document.getElementById('count_2024').innerText = data.count_2024;
-    document.getElementById('attend_2024').innerText = data.attend_2024;
-    document.getElementById('question_count_2024').innerText = data.question_count_2024;
-    document.getElementById('count_2023').innerText = data.count_2023;
-    document.getElementById('question_count_2023').innerText = data.question_count_2023;
+    const current_year = data.current_year;
+    const all_years = data.all_years;
+    const yearly_data = data.yearly_data;
 
-    var all_member = data.member_count + data.count_2024 + data.count_2023
-    var all_attend = data.attend + data.attend_2024
-    var all_question = data.question_count + data.question_count_2024 + data.question_count_2023
+    // Set header with current year
+    document.getElementById('year').innerText = current_year;
 
+    // Populate current year data
+    const currentYearData = yearly_data[current_year];
+    if (currentYearData) {
+        document.getElementById('year1').innerText = current_year;
+        document.getElementById('year2').innerText = current_year;
+        document.getElementById('year3').innerText = current_year;
+        document.getElementById('member_count').innerText = currentYearData.statistics.members_count;
+        document.getElementById('attend').innerText = currentYearData.statistics.attendance_count;
+        document.getElementById('question_count').innerText = currentYearData.statistics.questions_count;
+    }
+
+    // Calculate overall totals
+    let all_member = 0;
+    let all_attend = 0;
+    let all_question = 0;
+
+    // Populate data for all years and calculate totals
+    all_years.forEach(year => {
+        const yearStats = yearly_data[year].statistics;
+        all_member += yearStats.members_count;
+        all_attend += yearStats.attendance_count;
+        all_question += yearStats.questions_count;
+
+        // Populate specific year data (for backward compatibility with 2024 and 2023)
+        if (year === 2024) {
+            document.getElementById('count_2024').innerText = yearStats.members_count;
+            document.getElementById('attend_2024').innerText = yearStats.attendance_count;
+            document.getElementById('question_count_2024').innerText = yearStats.questions_count;
+        } else if (year === 2023) {
+            document.getElementById('count_2023').innerText = yearStats.members_count;
+            document.getElementById('question_count_2023').innerText = yearStats.questions_count;
+        }
+    });
+
+    // Set overall totals
     document.getElementById('all-member-count').innerText = all_member;
     document.getElementById('all-attend-count').innerText = all_attend;
     document.getElementById('all-question-count').innerText = all_question;
-
-    
 })
 .catch(error => {
     document.getElementById('message').innerText = error;
